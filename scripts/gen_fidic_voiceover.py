@@ -114,7 +114,36 @@ def normalize_broadcast_wav(raw_in, norm_out):
 
 def synthesize_cloned_gpu(scenes, ref_wav):
     os.environ["COQUI_TOS_AGREED"] = "1"
+    os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
+    if os.path.isdir(r"D:\26FIDIC"):
+        cache_root = r"D:\26FIDIC\.voice_clone_cache"
+        os.makedirs(cache_root, exist_ok=True)
+        os.environ.setdefault("TTS_HOME", os.path.join(cache_root, "tts_models"))
+        os.environ.setdefault("HF_HOME", os.path.join(cache_root, "hf"))
+        os.environ.setdefault("TORCH_HOME", os.path.join(cache_root, "torch"))
+
+    if os.name == "nt":
+        import shutil
+        _orig_symlink = os.symlink
+        def _safe_symlink(src, dst, *a, **kw):
+            try:
+                return _orig_symlink(src, dst, *a, **kw)
+            except OSError:
+                real_src = src if os.path.isabs(src) else os.path.normpath(os.path.join(os.path.dirname(dst), src))
+                if os.path.isdir(real_src):
+                    shutil.copytree(real_src, dst, dirs_exist_ok=True)
+                else:
+                    shutil.copy2(real_src, dst)
+        os.symlink = _safe_symlink
+
     import torch
+    # PyTorch 2.6+ weights_only compatibility for local TTS checkpoints
+    _orig_load = torch.load
+    def _compat_load(*a, **kw):
+        kw.setdefault("weights_only", False)
+        return _orig_load(*a, **kw)
+    torch.load = _compat_load
+
     from TTS.api import TTS
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -129,6 +158,7 @@ def synthesize_cloned_gpu(scenes, ref_wav):
             speaker_wav=ref_wav,
             language="tr",
             file_path=raw_wav,
+            split_sentences=True,
         )
         normalize_broadcast_wav(raw_wav, norm_wav)
 

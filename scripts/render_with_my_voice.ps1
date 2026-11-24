@@ -16,19 +16,33 @@ function Write-RenderStatus([string]$state, [string]$msg) {
 }
 
 try {
-    $venvDir = if (Test-Path "D:\26FIDIC") { "D:\26FIDIC\.voice_clone_env" } else { Join-Path $env:LOCALAPPDATA "CircleFIDIC\voice_env" }
+    if (Test-Path "D:\26FIDIC") {
+        $venvDir = "D:\26FIDIC\.voice_clone_env"
+        $cacheRoot = "D:\26FIDIC\.voice_clone_cache"
+        New-Item -ItemType Directory -Path $cacheRoot -Force | Out-Null
+        $env:UV_CACHE_DIR = Join-Path $cacheRoot "uv"
+        $env:TTS_HOME = Join-Path $cacheRoot "tts_models"
+        $env:HF_HOME = Join-Path $cacheRoot "hf"
+        $env:TORCH_HOME = Join-Path $cacheRoot "torch"
+        $env:TMP = Join-Path $cacheRoot "tmp"
+        $env:TEMP = Join-Path $cacheRoot "tmp"
+        New-Item -ItemType Directory -Path $env:TMP -Force | Out-Null
+    } else {
+        $venvDir = Join-Path $env:LOCALAPPDATA "CircleFIDIC\voice_env"
+    }
     $venvPy = Join-Path $venvDir "Scripts\python.exe"
 
     if (-not (Test-Path $venvPy)) {
         Write-RenderStatus "running" "1/3 İlk kurulum: Yerel GPU Türkçe ses klonlama ortamı hazırlanıyor..."
         uv venv $venvDir --python 3.11
-        uv pip install --python $venvPy torch torchaudio --index-url https://download.pytorch.org/whl/cu124
-        uv pip install --python $venvPy "coqui-tts>=0.25.0" edge-tts
+        uv pip install --python $venvPy "torch==2.5.1" "torchaudio==2.5.1" --index-url https://download.pytorch.org/whl/cu124
+        uv pip install --python $venvPy "coqui-tts==0.28.0" "transformers>=4.57.0,<5.0.0" six soundfile edge-tts
     }
 
     Write-RenderStatus "running" "2/3 Kendi ses profilinizle tüm sahneler yerel GPU üzerinde seslendiriliyor..."
     $env:COQUI_TOS_AGREED = "1"
     & $venvPy (Join-Path $PSScriptRoot "gen_fidic_voiceover.py") --engine clone
+    if ($LASTEXITCODE -ne 0) { throw "Ses klonlama adımı başarısız oldu (kod: $LASTEXITCODE)." }
 
     Write-RenderStatus "running" "3/3 9:16 Reels ve 16:9 Sunum MP4 videoları kare-kare birleştiriliyor..."
     Push-Location $studioDir
@@ -37,7 +51,9 @@ try {
     $mp4Wide  = Join-Path $wwwVideos "FIDIC_Felsefesi_16x9_Sunum_Sesli.mp4"
 
     npx remotion render FidicReels9x16 $mp4Reels --codec=h264
-    npx remotion render FidicWide16x9  $mp4Wide  --codec=h264
+    if ($LASTEXITCODE -ne 0) { Pop-Location; throw "9:16 video birleştirme hatası." }
+    npx remotion render FidicDeck16x9  $mp4Wide  --codec=h264
+    if ($LASTEXITCODE -ne 0) { Pop-Location; throw "16:9 video birleştirme hatası." }
     Pop-Location
 
     if (Test-Path $dOutDir) {
