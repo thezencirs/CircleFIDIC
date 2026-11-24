@@ -14,8 +14,102 @@ const APP = {
   roleFilter: 'all',
   fidicSearch: '',
   fidicSubTab: 'philosophy',
-  carouselIdx: 1
+  carouselIdx: 1,
+  voiceProfile: { exists: false, url: '', updated: '' },
+  isRecordingVoice: false,
+  recSeconds: 0
 };
+
+let _mediaRecorder = null;
+let _recChunks = [];
+let _recTimer = null;
+let _renderPollTimer = null;
+
+async function refreshVoiceProfileStatus() {
+  try {
+    const r = await fetch('/api/voice-profile/status');
+    APP.voiceProfile = await r.json();
+    if (APP.voiceProfile.renderState === 'running' && !_renderPollTimer) {
+      startVoiceRenderPolling();
+    }
+  } catch {}
+}
+
+function startVoiceRenderPolling() {
+  if (_renderPollTimer) clearInterval(_renderPollTimer);
+  _renderPollTimer = setInterval(async () => {
+    await refreshVoiceProfileStatus();
+    const st = APP.voiceProfile.renderState;
+    const lbl = document.getElementById('lblVoiceRenderMsg');
+    if (lbl && APP.voiceProfile.renderMessage) {
+      lbl.textContent = APP.voiceProfile.renderMessage;
+    }
+    if (st !== 'running') {
+      clearInterval(_renderPollTimer);
+      _renderPollTimer = null;
+      renderAll();
+    }
+  }, 2500);
+}
+
+async function triggerMyVoiceVideoRender() {
+  const res = await fetch('/api/voice-profile/render', { method: 'POST' });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    alert(err.error || 'Ses klonlama başlatılamadı.');
+    return;
+  }
+  await refreshVoiceProfileStatus();
+  startVoiceRenderPolling();
+  renderAll();
+}
+
+async function toggleMicVoiceRecording() {
+  if (APP.isRecordingVoice && _mediaRecorder) {
+    _mediaRecorder.stop();
+    return;
+  }
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true } });
+    _recChunks = [];
+    _mediaRecorder = new MediaRecorder(stream);
+    _mediaRecorder.ondataavailable = e => { if (e.data && e.data.size > 0) _recChunks.push(e.data); };
+    _mediaRecorder.onstop = async () => {
+      clearInterval(_recTimer);
+      APP.isRecordingVoice = false;
+      stream.getTracks().forEach(t => t.stop());
+      const blob = new Blob(_recChunks, { type: 'audio/webm' });
+      const fd = new FormData();
+      fd.append('file', blob, 'mic_recording.webm');
+      await fetch('/api/voice-profile/upload', { method: 'POST', body: fd });
+      await refreshVoiceProfileStatus();
+      renderAll();
+    };
+    APP.isRecordingVoice = true;
+    APP.recSeconds = 0;
+    _mediaRecorder.start();
+    renderAll();
+    _recTimer = setInterval(() => {
+      APP.recSeconds++;
+      const el = document.getElementById('lblRecTimer');
+      if (el) el.textContent = `${APP.recSeconds} sn kaydediliyor...`;
+      if (APP.recSeconds >= 35 && _mediaRecorder && _mediaRecorder.state === 'recording') {
+        _mediaRecorder.stop();
+      }
+    }, 1000);
+  } catch (err) {
+    alert('Mikrofon izni alınamadı veya mikrofon bulunamadı. İsterseniz yanındaki "Ses Dosyası Yükle" butonuyla telefon/bilgisayar ses kaydınızı seçebilirsiniz.');
+  }
+}
+
+async function uploadVoiceFile(inputEl) {
+  if (!inputEl.files || !inputEl.files[0]) return;
+  const fd = new FormData();
+  fd.append('file', inputEl.files[0]);
+  await fetch('/api/voice-profile/upload', { method: 'POST', body: fd });
+  await refreshVoiceProfileStatus();
+  renderAll();
+}
 
 function t(key) {
   return (window.CF_I18N[APP.lang] && window.CF_I18N[APP.lang][key]) || key;
@@ -98,6 +192,7 @@ async function initApp() {
   }
 
   await loadWeatherForActiveProject();
+  await refreshVoiceProfileStatus();
   renderAll();
 }
 
@@ -1044,15 +1139,56 @@ function renderFidic(prj) {
               </div>
             `).join('')}
           </div>
+          <!-- One-Time Master Voice Profile (Zero-Shot Local GPU Voice Cloning) -->
+          <div style="margin-top:12px;padding:14px 16px;border-radius:11px;background:var(--surface);border:1.5px solid var(--cobalt-bright)">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px">
+              <div>
+                <strong style="font-size:14px">Tek Seferlik Ses Profilim — Kendi Sesinle Otomatik Video</strong>
+                <div style="font-size:11.5px;color:var(--ink-secondary)">Yalnızca 1 kez ~20 saniye ses verin; bundan sonraki tüm videolar tek tek kayıt almadan kendi sesinizle üretilir.</div>
+              </div>
+              ${APP.voiceProfile && APP.voiceProfile.exists
+                ? `<span class="pill emerald">Ses Profili Hazır · ${esc(APP.voiceProfile.updated || '')}</span>`
+                : `<span class="pill amber">20 sn Referans Ses Bekleniyor</span>`}
+            </div>
+
+            <div style="padding:9px 12px;border-radius:8px;background:var(--surface-alt);border:1px dashed var(--border);font-size:12.5px;line-height:1.5;margin-bottom:10px">
+              <span style="font-size:11px;font-weight:700;color:var(--cobalt);display:block;margin-bottom:2px">ÖRNEK OKUMA METNİ (~20 SANİYE DOĞAL TONLA OKUYUN VEYA MEVCUT SES/VİDEO DOSYANIZI SEÇİN):</span>
+              “Merhaba, ben Mehmet Zencir. Şantiyelerde gerçek kalite; doğru planlama, net sorumluluk ve zamanında tutulan kayıtlarla kurulur. Mimari tasarımdan kesin kabule kadar her adımı şeffaf ve adil yönetiyoruz.”
+            </div>
+
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+              <button class="btn ${APP.isRecordingVoice ? 'danger' : 'primary'}" onclick="toggleMicVoiceRecording()">
+                ${APP.isRecordingVoice ? '■ Kaydı Bitir ve Profil Yap' : '● Mikrofondan Kaydet (20 sn)'}
+              </button>
+              ${APP.isRecordingVoice ? `<span id="lblRecTimer" style="font-size:12.5px;font-weight:700;color:#DC2626">${APP.recSeconds} sn kaydediliyor...</span>` : ''}
+              <label class="btn" style="cursor:pointer;margin:0">
+                Ses / Video Dosyası Seç (.wav / .mp3 / .m4a / .mp4)
+                <input type="file" accept="audio/*,video/*" style="display:none" onchange="uploadVoiceFile(this)" />
+              </label>
+              ${APP.voiceProfile && APP.voiceProfile.exists ? `
+                <button class="btn emerald" ${APP.voiceProfile.renderState === 'running' ? 'disabled' : ''} onclick="triggerMyVoiceVideoRender()">
+                  ${APP.voiceProfile.renderState === 'running' ? 'Yerel GPU Üretiyor...' : 'Kendi Sesimle Videoları Üret (Yerel GPU)'}
+                </button>
+                <audio controls src="${esc(APP.voiceProfile.url)}" style="height:32px;max-width:220px"></audio>
+              ` : ''}
+            </div>
+
+            ${APP.voiceProfile && APP.voiceProfile.renderMessage ? `
+              <div id="lblVoiceRenderMsg" style="margin-top:9px;padding:7px 10px;border-radius:7px;background:var(--cobalt-tint);font-size:12px;font-weight:600;color:var(--cobalt)">
+                ${esc(APP.voiceProfile.renderMessage)}
+              </div>
+            ` : ''}
+          </div>
+
           <div style="margin-top:12px;padding:13px 15px;border-radius:11px;background:var(--surface-alt);border:1px solid var(--border)">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:6px">
-              <strong>Seslendirmeli Animasyonlu FIDIC Felsefesi Videosu (Remotion + Türkçe Ses)</strong>
+              <strong>Seslendirmeli Animasyonlu FIDIC Felsefesi Videosu (Açık Kaynak Stüdyo + Türkçe Ses)</strong>
               <div style="display:flex;gap:6px">
-                <a class="btn sm primary" href="/videos/FIDIC_Felsefesi_9x16_Reels_Sesli.mp4" download>9:16 Reels İndir (.mp4)</a>
-                <a class="btn sm" href="/videos/FIDIC_Felsefesi_16x9_Sunum_Sesli.mp4" download>16:9 Sunum İndir (.mp4)</a>
+                <a class="btn sm primary" href="/videos/FIDIC_Felsefesi_9x16_Reels_Sesli.mp4?v=${esc((APP.voiceProfile && APP.voiceProfile.videoVer) || '1')}" download="FIDIC_Felsefesi_9x16_Reels_Sesli.mp4">9:16 Reels İndir (.mp4)</a>
+                <a class="btn sm" href="/videos/FIDIC_Felsefesi_16x9_Sunum_Sesli.mp4?v=${esc((APP.voiceProfile && APP.voiceProfile.videoVer) || '1')}" download="FIDIC_Felsefesi_16x9_Sunum_Sesli.mp4">16:9 Sunum İndir (.mp4)</a>
               </div>
             </div>
-            <video src="/videos/FIDIC_Felsefesi_16x9_Sunum_Sesli.mp4" controls preload="metadata" style="width:100%;border-radius:8px;border:1px solid var(--border);background:#0F172A"></video>
+            <video src="/videos/FIDIC_Felsefesi_16x9_Sunum_Sesli.mp4?v=${esc((APP.voiceProfile && APP.voiceProfile.videoVer) || '1')}" controls preload="metadata" style="width:100%;border-radius:8px;border:1px solid var(--border);background:#0F172A"></video>
             <div style="margin-top:8px;font-size:11.5px;color:var(--ink-secondary)">
               <strong>Klasör:</strong> <code>D:\\26FIDIC\\Instagram_FIDIC_Carousel_Kartlari\\</code> · <strong>Açık Kaynak Video Motoru:</strong> <code>github.com/thezencirs/CircleFIDIC/tree/main/video-studio</code>
             </div>

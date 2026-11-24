@@ -419,6 +419,136 @@ public sealed class EmbeddedWebHost : IAsyncDisposable
             }
         });
 
+        app.MapGet("/api/voice-profile/status", () =>
+        {
+            var refPath = Path.Combine(uploadsDir, "master_voice_ref.wav");
+            const string dRefPath = @"D:\26FIDIC\Instagram_FIDIC_Carousel_Kartlari\Benim_Ses_Profilim_Referans.wav";
+            if (!File.Exists(refPath) && File.Exists(dRefPath))
+            {
+                try { File.Copy(dRefPath, refPath, overwrite: true); } catch { }
+            }
+
+            bool exists = File.Exists(refPath);
+            long bytes = exists ? new FileInfo(refPath).Length : 0;
+            string updated = exists ? File.GetLastWriteTime(refPath).ToString("yyyy-MM-dd HH:mm") : "";
+
+            var statusJsonPath = Path.Combine(uploadsDir, "voice_render_status.json");
+            string renderState = "idle";
+            string renderMessage = "";
+            string videoVer = exists ? File.GetLastWriteTimeUtc(refPath).Ticks.ToString() : "1";
+            if (File.Exists(statusJsonPath))
+            {
+                try
+                {
+                    var node = JsonNode.Parse(File.ReadAllText(statusJsonPath)) as JsonObject;
+                    renderState = node?["state"]?.GetValue<string>() ?? "idle";
+                    renderMessage = node?["message"]?.GetValue<string>() ?? "";
+                    videoVer = node?["videoVer"]?.GetValue<string>() ?? videoVer;
+                }
+                catch { }
+            }
+
+            return Results.Json(new
+            {
+                exists,
+                bytes,
+                updated,
+                url = exists ? $"/uploads/master_voice_ref.wav?t={File.GetLastWriteTimeUtc(refPath).Ticks}" : "",
+                renderState,
+                renderMessage,
+                videoVer
+            });
+        });
+
+        app.MapPost("/api/voice-profile/upload", async (HttpRequest req) =>
+        {
+            if (!req.HasFormContentType) return Results.BadRequest();
+            var form = await req.ReadFormAsync();
+            var file = form.Files.FirstOrDefault();
+            if (file == null || file.Length == 0) return Results.BadRequest();
+
+            var ext = Path.GetExtension(file.FileName);
+            if (string.IsNullOrWhiteSpace(ext)) ext = ".webm";
+            var rawTemp = Path.Combine(Path.GetTempPath(), $"cf_voice_raw_{Guid.NewGuid():N}{ext}");
+            await using (var fs = File.Create(rawTemp))
+            {
+                await file.CopyToAsync(fs);
+            }
+
+            var finalWav = Path.Combine(uploadsDir, "master_voice_ref.wav");
+            var ffmpegPath = @"C:\Users\zenci\Desktop\Circle_Mix_Record\bin\ffmpeg.exe";
+            if (File.Exists(ffmpegPath))
+            {
+                var psi = new ProcessStartInfo
+                {
+                    FileName = ffmpegPath,
+                    Arguments = $"-y -i \"{rawTemp}\" -t 28 -vn -af \"highpass=f=80,lowpass=f=11000,loudnorm=I=-16:TP=-1.5:LRA=11\" -ar 24000 -ac 1 \"{finalWav}\"",
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+                using var proc = Process.Start(psi);
+                if (proc != null) await proc.WaitForExitAsync();
+            }
+            else
+            {
+                File.Copy(rawTemp, finalWav, overwrite: true);
+            }
+
+            try { File.Delete(rawTemp); } catch { }
+
+            const string dCopyDir = @"D:\26FIDIC\Instagram_FIDIC_Carousel_Kartlari";
+            if (Directory.Exists(dCopyDir) && File.Exists(finalWav))
+            {
+                File.Copy(finalWav, Path.Combine(dCopyDir, "Benim_Ses_Profilim_Referans.wav"), overwrite: true);
+            }
+
+            return Results.Json(new
+            {
+                ok = true,
+                url = $"/uploads/master_voice_ref.wav?t={DateTime.UtcNow.Ticks}",
+                updated = DateTime.Now.ToString("yyyy-MM-dd HH:mm")
+            });
+        });
+
+        app.MapPost("/api/voice-profile/render", () =>
+        {
+            var refPath = Path.Combine(uploadsDir, "master_voice_ref.wav");
+            if (!File.Exists(refPath))
+            {
+                return Results.BadRequest(new { error = "Önce 20 saniyelik ses profilinizi kaydedin veya yükleyin." });
+            }
+
+            var scriptCandidates = new[]
+            {
+                @"C:\Users\zenci\.gemini\antigravity\scratch\CircleFIDIC\scripts\render_with_my_voice.ps1",
+                Path.Combine(AppContext.BaseDirectory, "scripts", "render_with_my_voice.ps1")
+            };
+            var scriptPath = scriptCandidates.FirstOrDefault(File.Exists);
+            if (scriptPath == null)
+            {
+                return Results.NotFound(new { error = "Ses üretim betiği bulunamadı." });
+            }
+
+            var statusJsonPath = Path.Combine(uploadsDir, "voice_render_status.json");
+            var initStatus = new JsonObject
+            {
+                ["state"] = "running",
+                ["message"] = "1/3 Yerel GPU ses klonlama motoru başlatılıyor...",
+                ["videoVer"] = DateTime.UtcNow.Ticks.ToString()
+            };
+            File.WriteAllText(statusJsonPath, initStatus.ToJsonString());
+
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "powershell.exe",
+                Arguments = $"-NoProfile -ExecutionPolicy Bypass -File \"{scriptPath}\"",
+                UseShellExecute = false,
+                CreateNoWindow = true
+            });
+
+            return Results.Json(new { ok = true, state = "running" });
+        });
+
         app.MapPost("/api/open-fidic-local", async (HttpRequest req) =>
         {
             var body = await JsonNode.ParseAsync(req.Body) as JsonObject;

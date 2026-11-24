@@ -1,18 +1,28 @@
 # -*- coding: utf-8 -*-
-# Copyright (c) 2026 thezencirs - Circle FIDIC Studio Voiceover & Frame-Exact Timing Generator
-import asyncio, json, os, re, subprocess
-import edge_tts
+# Copyright (c) 2026 thezencirs - Circle FIDIC Studio Voiceover & Zero-Shot Local GPU Voice Cloning Generator
+import argparse
+import asyncio
+import json
+import os
+import re
+import subprocess
 
 FFMPEG = r"C:\Users\zenci\Desktop\Circle_Mix_Record\bin\ffmpeg.exe"
 STUDIO_DIR = r"C:\Users\zenci\.gemini\antigravity\scratch\CircleFIDIC\video-studio"
 PUBLIC_AUDIO_DIR = os.path.join(STUDIO_DIR, "public", "audio")
 os.makedirs(PUBLIC_AUDIO_DIR, exist_ok=True)
 
-VOICE = "tr-TR-AhmetNeural"
-FPS = 30
-HANDLE_SEC = 0.45  # breathing room after voice ends per presentation-video skill
+LOCAL_APPDATA = os.environ.get("LOCALAPPDATA", os.path.expanduser(r"~\AppData\Local"))
+REF_CANDIDATES = [
+    os.path.join(LOCAL_APPDATA, "CircleFIDIC", "uploads", "master_voice_ref.wav"),
+    r"D:\26FIDIC\Instagram_FIDIC_Carousel_Kartlari\Benim_Ses_Profilim_Referans.wav",
+]
 
-SCENES = [
+DEFAULT_VOICE = "tr-TR-AhmetNeural"
+FPS = 30
+HANDLE_SEC = 0.45
+
+DEFAULT_SCENES = [
     {
         "id": "s01",
         "num": "01 / 07",
@@ -71,6 +81,14 @@ SCENES = [
     }
 ]
 
+
+def find_voice_reference():
+    for path in REF_CANDIDATES:
+        if os.path.isfile(path) and os.path.getsize(path) > 4096:
+            return path
+    return None
+
+
 def get_duration_sec(filepath):
     p = subprocess.run([FFMPEG, "-i", filepath], capture_output=True, text=True)
     m = re.search(r"Duration:\s*(\d+):(\d+):(\d+\.\d+)", p.stderr)
@@ -78,41 +96,111 @@ def get_duration_sec(filepath):
         return 6.0
     return int(m.group(1)) * 3600 + int(m.group(2)) * 60 + float(m.group(3))
 
-async def main():
-    manifest = []
-    total_frames = 0
-    for idx, sc in enumerate(SCENES, 1):
+
+def normalize_broadcast_wav(raw_in, norm_out):
+    subprocess.run(
+        [
+            FFMPEG, "-y", "-i", raw_in,
+            "-af", "highpass=f=80,acompressor=threshold=-18dB:ratio=3:attack=5:release=90,loudnorm=I=-16:TP=-1.5:LRA=11",
+            "-ar", "48000", "-ac", "2", norm_out,
+        ],
+        check=True,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    if os.path.exists(raw_in):
+        os.remove(raw_in)
+
+
+def synthesize_cloned_gpu(scenes, ref_wav):
+    os.environ["COQUI_TOS_AGREED"] = "1"
+    import torch
+    from TTS.api import TTS
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    print(f"[VOICE-CLONE] Device={device} | Reference={ref_wav}")
+    tts_model = TTS("tts_models/multilingual/multi-dataset/xtts_v2").to(device)
+
+    for sc in scenes:
+        raw_wav = os.path.join(PUBLIC_AUDIO_DIR, f"{sc['id']}_raw.wav")
+        norm_wav = os.path.join(PUBLIC_AUDIO_DIR, f"{sc['id']}.wav")
+        tts_model.tts_to_file(
+            text=sc["tts"],
+            speaker_wav=ref_wav,
+            language="tr",
+            file_path=raw_wav,
+        )
+        normalize_broadcast_wav(raw_wav, norm_wav)
+
+
+async def synthesize_fallback_tts(scenes):
+    import edge_tts
+
+    for sc in scenes:
         raw_mp3 = os.path.join(PUBLIC_AUDIO_DIR, f"{sc['id']}_raw.mp3")
         norm_wav = os.path.join(PUBLIC_AUDIO_DIR, f"{sc['id']}.wav")
-        comm = edge_tts.Communicate(sc["tts"], VOICE, rate="+5%")
+        comm = edge_tts.Communicate(sc["tts"], DEFAULT_VOICE, rate="+5%")
         await comm.save(raw_mp3)
+        normalize_broadcast_wav(raw_mp3, norm_wav)
 
-        # Normalize to broadcast -16 LUFS clean 48kHz WAV via FFmpeg
-        subprocess.run([
-            FFMPEG, "-y", "-i", raw_mp3,
-            "-af", "highpass=f=80,acompressor=threshold=-18dB:ratio=3:attack=5:release=90,loudnorm=I=-16:TP=-1.5:LRA=11",
-            "-ar", "48000", "-ac", "2", norm_wav
-        ], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        os.remove(raw_mp3)
 
+def build_manifest(scenes, voice_mode):
+    manifest = []
+    total_frames = 0
+    for idx, sc in enumerate(scenes, 1):
+        norm_wav = os.path.join(PUBLIC_AUDIO_DIR, f"{sc['id']}.wav")
         dur = round(get_duration_sec(norm_wav), 3)
-        extra = 1.6 if idx == len(SCENES) else HANDLE_SEC  # Hold final CTA frame >= 2s
+        extra = 1.6 if idx == len(scenes) else HANDLE_SEC
         frames = int(round((dur + extra) * FPS))
         total_frames += frames
-        item = {
-            **sc,
-            "audioFile": f"audio/{sc['id']}.wav",
-            "audioSec": dur,
-            "durationInFrames": frames
-        }
-        manifest.append(item)
-        print(f"{sc['id']} | {dur:5.2f}s audio -> {frames:3d} frames")
+        manifest.append(
+            {
+                **sc,
+                "audioFile": f"audio/{sc['id']}.wav",
+                "audioSec": dur,
+                "durationInFrames": frames,
+            }
+        )
+        print(f"{sc['id']} | {dur:5.2f}s audio -> {frames:3d} frames ({voice_mode})")
 
     out_json = os.path.join(STUDIO_DIR, "src", "scenes_manifest.json")
     os.makedirs(os.path.dirname(out_json), exist_ok=True)
     with open(out_json, "w", encoding="utf-8") as f:
-        json.dump({"fps": FPS, "totalFrames": total_frames, "scenes": manifest}, f, ensure_ascii=False, indent=2)
+        json.dump(
+            {
+                "fps": FPS,
+                "voiceMode": voice_mode,
+                "totalFrames": total_frames,
+                "scenes": manifest,
+            },
+            f,
+            ensure_ascii=False,
+            indent=2,
+        )
     print(f"TOTAL VIDEO: {total_frames} frames ({total_frames / FPS:.1f}s @ {FPS}fps)")
 
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--engine", choices=["auto", "clone", "standard"], default="auto")
+    parser.add_argument("--scenes-json", default="")
+    args = parser.parse_args()
+
+    scenes = DEFAULT_SCENES
+    if args.scenes_json and os.path.isfile(args.scenes_json):
+        with open(args.scenes_json, "r", encoding="utf-8") as f:
+            scenes = json.load(f)
+
+    ref_wav = find_voice_reference()
+    use_clone = (args.engine == "clone") or (args.engine == "auto" and ref_wav is not None)
+
+    if use_clone and ref_wav:
+        synthesize_cloned_gpu(scenes, ref_wav)
+        build_manifest(scenes, "custom_voice_clone")
+    else:
+        asyncio.run(synthesize_fallback_tts(scenes))
+        build_manifest(scenes, "standard_tr")
+
+
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
