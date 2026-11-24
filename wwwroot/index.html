@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0F172A" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Circle FIDIC" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" type="image/png" href="/icon-192.png" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+  <title>Circle FIDIC — Proje &amp; Şantiye İşletim Sistemi · by thezencirs</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <!-- Top Command Header (Single Logo Mark Rule Complied) -->
+  <header class="topbar">
+    <div class="brand-wrap">
+      <div class="brand-title">
+        <span class="brand-logo-mark">◯</span>
+        <span>Circle FIDIC</span>
+      </div>
+      <div class="brand-subtitle" id="lblAppSub">FIDIC Kabuklu Proje &amp; Şantiye İşletim Sistemi</div>
+    </div>
+
+    <div class="top-controls">
+      <select id="selProject" class="project-select" aria-label="Proje Seçimi"></select>
+
+      <div class="seg-group" id="timeHorizonBar" title="Zaman Ölçeği">
+        <button class="seg-btn" data-horizon="hour" id="btnHzHour">Saat</button>
+        <button class="seg-btn" data-horizon="day" id="btnHzDay">Gün</button>
+        <button class="seg-btn" data-horizon="week" id="btnHzWeek">Hafta</button>
+        <button class="seg-btn active" data-horizon="month" id="btnHzMonth">Ay</button>
+        <button class="seg-btn" data-horizon="year" id="btnHzYear">Yıl</button>
+      </div>
+
+      <div class="seg-group" title="Dil / Language">
+        <button class="seg-btn active" id="btnLangTr" onclick="setLanguage('tr')">TR</button>
+        <button class="seg-btn" id="btnLangEn" onclick="setLanguage('en')">EN</button>
+      </div>
+
+      <a class="top-btn" id="btnOpenBookTop" href="/fidic-library/00_FIDIC_TURKCE_GORSEL_KITAP_V2_RESIMLI_SEMALI.html" target="_blank" style="text-decoration:none" title="Sürüm 2.0 Resimli ve Şemalı Görsel Türkçe Kitabı Aç">Görsel Kitap v2</a>
+      <button class="top-btn" id="btnMobileSim" onclick="toggleMobileSim()">Mobil Saha</button>
+      <button class="top-btn" id="btnDarkToggle" onclick="toggleDarkMode()">Gece</button>
+      <button class="top-btn primary" id="btnNewProject" onclick="openNewProjectModal()">+ Yeni Proje</button>
+      <button class="top-btn user-pill" id="btnActiveUser" onclick="openLoginModal()">Mehmet Zencir · Yatırımcı</button>
+    </div>
+  </header>
+
+  <!-- FIDIC Contract Shell & Quick Role Switcher Ribbon -->
+  <div class="fidic-shell-ribbon">
+    <div class="shell-book-tag" id="lblFidicBookShell">FIDIC Kırmızı Kitap 2017</div>
+    <div class="shell-stages" id="shellStagesContainer"></div>
+    <div class="role-quick-bar" id="roleQuickBar"></div>
+  </div>
+
+  <!-- Main Workspace Layout -->
+  <div class="app-shell">
+    <aside class="side-nav" id="sideNav">
+      <button class="nav-item active" data-tab="overview" onclick="switchTab('overview')">
+        <span id="navLblOverview">Komuta Merkezi</span>
+      </button>
+      <button class="nav-item" data-tab="timeline" onclick="switchTab('timeline')">
+        <span id="navLblTimeline">İlerleme &amp; Hız</span>
+        <span class="nav-badge" id="badgeHorizon">5 Ölçek</span>
+      </button>
+      <button class="nav-item" data-tab="tasks" onclick="switchTab('tasks')">
+        <span id="navLblTasks">Sorumluluklar</span>
+        <span class="nav-badge" id="badgeTasks">0</span>
+      </button>
+      <button class="nav-item" data-tab="meals" onclick="switchTab('meals')">
+        <span id="navLblMeals">Sayılar &amp; Yemek</span>
+        <span class="nav-badge" id="badgeMeals">0</span>
+      </button>
+      <button class="nav-item" data-tab="weather" onclick="switchTab('weather')">
+        <span id="navLblWeather">Hava Durumu</span>
+        <span class="nav-badge" id="badgeWeather">Canlı</span>
+      </button>
+      <button class="nav-item" data-tab="finance" onclick="switchTab('finance')">
+        <span id="navLblFinance">Maliyet &amp; Hakediş</span>
+      </button>
+      <button class="nav-item" data-tab="media" onclick="switchTab('media')">
+        <span id="navLblMedia">Foto • Video • Proje</span>
+        <span class="nav-badge" id="badgeMedia">0</span>
+      </button>
+      <button class="nav-item" data-tab="snags" onclick="switchTab('snags')">
+        <span id="navLblSnags">Eksik &amp; Geri Bildirim</span>
+        <span class="nav-badge warn" id="badgeSnags">0</span>
+      </button>
+      <button class="nav-item" data-tab="fidic" onclick="switchTab('fidic')">
+        <span id="navLblFidic">FIDIC Kabuğu &amp; Kitap</span>
+        <span class="nav-badge warn" id="badgeNotices">28g</span>
+      </button>
+
+      <div class="lan-card" id="lanInfoCard">
+        <strong>Web &amp; Android / iOS Bağlantısı</strong>
+        <div>Aynı ağdaki telefon ve tabletlerden kurulumsuz açın:</div>
+        <div class="lan-url" id="lblLanUrl">http://127.0.0.1:4580</div>
+      </div>
+    </aside>
+
+    <main class="workspace" id="mainWorkspace"></main>
+  </div>
+
+  <!-- Glove-Friendly Mobile Bottom Navigation (Android / iOS Field UX) -->
+  <nav class="mobile-bottom-nav" id="mobileBottomNav">
+    <button class="mob-nav-btn active" data-tab="overview" onclick="switchTab('overview')">
+      <span>Özet</span>
+    </button>
+    <button class="mob-nav-btn" data-tab="tasks" onclick="switchTab('tasks')">
+      <span>Görevler</span>
+    </button>
+    <button class="mob-nav-btn" data-tab="meals" onclick="switchTab('meals')">
+      <span>Yemek/Sayı</span>
+    </button>
+    <button class="mob-nav-btn" data-tab="media" onclick="switchTab('media')">
+      <span>Foto/Pafta</span>
+    </button>
+    <button class="mob-nav-btn" data-tab="snags" onclick="switchTab('snags')">
+      <span>Eksikler</span>
+    </button>
+  </nav>
+
+  <!-- Universal Modal Dialog -->
+  <div class="modal-backdrop" id="appModal" onclick="if(event.target===this)closeModal()">
+    <div class="modal-box" id="appModalContent"></div>
+  </div>
+
+  <script src="/i18n.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

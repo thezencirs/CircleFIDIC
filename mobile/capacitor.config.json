@@ -1,0 +1,10 @@
+{
+  "appId": "com.thezencirs.circlefidic",
+  "appName": "Circle FIDIC",
+  "webDir": "../wwwroot",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https",
+    "iosScheme": "capacitor"
+  }
+}

@@ -1,0 +1,2002 @@
+{
+  "goldenPrinciples": [
+    {
+      "code": "GP 1",
+      "title": "Sözleşme Rollerinin Korunması",
+      "desc": "Tüm katılımcıların görev, hak, yükümlülük ve sorumlulukları Genel Şartlarda (General Conditions) öngörüldüğü gibi korunmalı ve projenin gereklilikleriyle uyumlu olmalıdır. Örneğin Mühendisin sözleşmeyi yönetme rolü tamamen sıfırlanamaz."
+    },
+    {
+      "code": "GP 2",
+      "title": "Açık, Net ve Çelişkisiz Özel Şartlar",
+      "desc": "Özel Şartlar (Particular Conditions) açık, anlaşılır ve belirsizlikten uzak hazırlanmalı; Genel Şartlardaki madde kurgusunu bozacak çelişkiler içermemelidir."
+    },
+    {
+      "code": "GP 3",
+      "title": "Mühendisin Tarafsız Karar Verme Yetkisi",
+      "desc": "Özel Şartlar, Mühendisin (veya Beyaz/Yeşil Kitaptaki temsilcinin) uzlaştırma ve tespit (Madde 3.7 Determination) görevini adil ve tarafsız biçimde yürütmesini engelleyemez."
+    },
+    {
+      "code": "GP 4",
+      "title": "Makul Süreler İlkesi",
+      "desc": "Sözleşmede öngörülen tüm bildirim, onay, inceleme ve ödeme süreleri her iki taraf için de sahada uygulanabilir ve makul uzunlukta olmalıdır (örneğin 28 günlük süreyi 24 saate indirmek Altın İlke ihlalidir)."
+    },
+    {
+      "code": "GP 5",
+      "title": "DAAB Uyuşmazlık Çözüm Hakkı",
+      "desc": "Çelişkili bir ulusal yasa zorunluluğu olmadıkça, tüm resmi uyuşmazlıklar tahkime gitmeden önce geçici fakat bağlayıcı karar vermesi için Uyuşmazlık Önleme ve Çözüm Kuruluna (DAAB) götürülmelidir."
+    }
+  ],
+  "books": [
+    {
+      "code": "RED",
+      "tr_name": "Kırmızı Kitap (Red Book — 1999 & 2017 2. Baskı)",
+      "en_name": "Conditions of Contract for Construction",
+      "designer": "İşveren (veya İşverenin Mimarı/Müşaviri)",
+      "payment": "Birim Fiyat & Gerçekleşen Metraj (Madde 12 Ölçüm Esaslı)",
+      "admin": "Mühendis (The Engineer — Madde 3)",
+      "risk": "Dengeli Risk Paylaşımı (Zemin ve tasarım riski ağırlıklı İşverende)",
+      "scale": "Bina, Kampüs, Altyapı, Yol, Köprü, Hastane, Konut Etapları",
+      "summary": "Tasarımın büyük ölçüde İşveren tarafından hazırlandığı klasik inşaat ve mühendislik projelerinin ana omurgasıdır. Yüklenici verilen projeye göre imalat yapar, yapılan imalat sahada ölçülür (metraj) ve birim fiyatlarla ödenir."
+    },
+    {
+      "code": "YELLOW",
+      "tr_name": "Sarı Kitap (Yellow Book — 1999 & 2017 2. Baskı)",
+      "en_name": "Conditions of Contract for Plant and Design-Build",
+      "designer": "Yüklenici (İşveren İhtiyaç Programına / Employer's Requirements Göre)",
+      "payment": "Götürü Bedel (Lump Sum — Ödeme Takvimi / Kilometre Taşı Esaslı)",
+      "admin": "Mühendis (The Engineer — Madde 3)",
+      "risk": "Tasarım ve Performans Riski Yüklenicide; Öngörülemeyen Zemin Riski Dengeli",
+      "scale": "Endüstriyel Tesis, Mekanik/Elektrik Ağırlıklı Yapılar, Tasarla-Yap Kompleksler",
+      "summary": "İşverenin performans kriterlerini (Employer's Requirements) tanımladığı, Yüklenicinin ise hem uygulama projelerini (Madde 5) çizdiği hem de tesis/yapıyı inşa edip amaca uygunluğunu (Fitness for Purpose) garanti ettiği modeldir."
+    },
+    {
+      "code": "SILVER",
+      "tr_name": "Gümüş Kitap (Silver Book — 1999 & 2017 2. Baskı)",
+      "en_name": "Conditions of Contract for EPC / Turnkey Projects",
+      "designer": "Yüklenici (Tam Mühendislik, Tedarik ve Yapım — EPC)",
+      "payment": "Kesin Götürü Bedel (Sabit Fiyat & Kesin Bitiş Tarihi Güvencesi)",
+      "admin": "İşveren Temsilcisi (Employer's Representative — Mühendis Yoktur!)",
+      "risk": "Riskin Büyük Çoğunluğu (Zemin ve Tasarım Dahil) Yüklenicidedir",
+      "scale": "Enerji Santrali, Rafineri, Havalimanı, Yap-İşlet-Devret / Finansmanlı Mega Projeler",
+      "summary": "Yatırımcının ve kredi veren finans kuruluşlarının 'kesin toplam maliyet ve kesin bitiş tarihi' istediği anahtar teslim projeler içindir. Öngörülemeyen zemin koşulları (Madde 4.12) ve saha verisi hataları kural olarak Yüklenici riskindedir."
+    },
+    {
+      "code": "GREEN",
+      "tr_name": "Yeşil Kitap (Green Book — Kısa Sözleşme Formu)",
+      "en_name": "Short Form of Contract (15 Clauses)",
+      "designer": "İşveren veya Yüklenici (Esnek Seçimli — Madde 5)",
+      "payment": "Götürü, Birim Fiyat veya Maliyet+Kâr (Esnek Ödeme Seçenekli)",
+      "admin": "İşveren Yetkilisi / Temsilcisi (Madde 3)",
+      "risk": "Basitleştirilmiş ve Net Risk Dağılımı",
+      "scale": "Mikro ve Orta Ölçek: Villa, Tadilat, Mağaza İçi, Küçük Bina, Kısa Süreli İşler",
+      "summary": "Sermaye bedeli görece düşük, tekrarlayan veya kısa süreli (ör. 6-18 ay) işler için 21 madde yerine 15 sade maddeden oluşan pratik FIDIC kabuğudur. Bürokratik yük oluşturmadan tam hukuki koruma sağlar."
+    },
+    {
+      "code": "WHITE",
+      "tr_name": "Beyaz Kitap (White Book — 2006 4. Baskı & 2017 5. Baskı)",
+      "en_name": "Client / Consultant Model Services Agreement",
+      "designer": "Müşavir / Mimar / Mühendislik Ofisi (Hizmet Üreticisi)",
+      "payment": "Zaman Esaslı, Götürü veya Yüzde Ücret (Ek 3 Remuneration)",
+      "admin": "İşveren (Client) — Müşavir (Consultant) Doğrudan İlişkisi",
+      "risk": "Mesleki Özen Yükümlülüğü (Reasonable Skill and Care) & Sorumluluk Üst Sınırı",
+      "scale": "Mimari Proje, Statik/MEP Tasarım, Fizibilite, Kontrollük ve Proje Yönetimi",
+      "summary": "Yatırımcı ile Mimar, Mühendis veya Proje Yönetim firması arasında imzalanan danışmanlık/tasarım hizmet sözleşmesidir. 2017 5. Baskısı ile 10 ana maddeye çıkarılmış, hizmet değişiklikleri (Madde 5) ve fikri mülkiyet netleştirilmiştir."
+    },
+    {
+      "code": "GOLD",
+      "tr_name": "Altın Kitap (Gold Book — 2008 DBO)",
+      "en_name": "Conditions of Contract for Design, Build and Operate Projects",
+      "designer": "Yüklenici (Tasarım + İnşaat + 20 Yıl İşletme ve Bakım)",
+      "payment": "Yapım Ödemeleri + Uzun Vadeli İşletme Hizmet Bedeli",
+      "admin": "İşveren Temsilcisi + Denetim Kurulu",
+      "risk": "Uzun Vadeli Yaşam Döngüsü (Life-Cycle) ve Bakım Kalitesi Yüklenicidedir",
+      "scale": "Şehir Ölçeği Su Arıtma, Atık Yönetimi, Ulaşım Hatları, Kamu Altyapısı",
+      "summary": "Yüklenicinin tesisi tasarlayıp inşa ettikten sonra (örneğin 20 yıl boyunca) bizzat işlettiği modeldir. Yüklenici işletme maliyetini kendi üstleneceği için yapım aşamasında ucuz ve kalitesiz malzeme kullanma riskini ortadan kaldırır."
+    },
+    {
+      "code": "EMERALD",
+      "tr_name": "Zümrüt Kitap (Emerald Book — 2019 Yeraltı İşleri)",
+      "en_name": "Conditions of Contract for Underground Works (FIDIC-ITA)",
+      "designer": "Yüklenici / Hibrit (Jeoteknik Baz Raporu — GBR Esaslı)",
+      "payment": "Kazı/Destekleme Gerçek Zemin Sınıfına Göre Ayarlanan Karma Bedel",
+      "admin": "Mühendis (Yeraltı ve Tünel Uzmanlığıyla)",
+      "risk": "GBR Sınırları İçi Yüklenicide, GBR Dışı Zemin Koşulları İşverendedir",
+      "scale": "Metro, Karayolu/Demiryolu Tüneli, Yeraltı Baraj ve Kavern Projeleri",
+      "summary": "Sarı Kitap tabanı üzerine Uluslararası Tünelcilik Birliği (ITA) ile geliştirilmiştir. Zemin koşullarına bağlı olarak tamamlama süresinin ve kazı/tahkimat bedelinin otomatik uzayıp kısalmasını sağlayan özel mekanizmalar içerir."
+    },
+    {
+      "code": "BLUE",
+      "tr_name": "Mavi Kitap (Blue-Green Book — Tarama ve Islah)",
+      "en_name": "Form of Contract for Dredging and Reclamation Works",
+      "designer": "Genellikle İşveren (Deniz, Liman ve Kıyı Mühendisliği)",
+      "payment": "Birim Fiyat, Kübaj veya Götürü Bedel",
+      "admin": "Mühendis",
+      "risk": "Deniz İklimi, Dalga ve Tarak Gemisi Bekleme Riskleri Özel Tanımlı",
+      "scale": "Liman, Marina, Kanal Derinleştirme, Deniz Dolgusu ve Kıyı Koruma",
+      "summary": "Kusur Bildirim Süresi (DNP) tarama işlerinde çoğu kez aranmadığı ve deniz ekipmanı maliyetleri çok yüksek olduğu için özel olarak sadeleştirilmiş deniz yapıları sözleşmesidir."
+    },
+    {
+      "code": "SUB",
+      "tr_name": "Alt Yüklenici Sözleşmesi (Subcontract — 2011)",
+      "en_name": "Conditions of Subcontract for Construction",
+      "designer": "Ana Sözleşmeye Paralel (Back-to-Back Kırmızı Kitap Uyumu)",
+      "payment": "Ölçüm / Hakediş Esaslı (Pay-when-paid ve Hak Süreleri Düzenlenmiş)",
+      "admin": "Ana Yüklenici (Contractor)",
+      "risk": "Ana Sözleşme Risklerinin Alt Yükleniciye/Taşerona Dengeli Aktarımı",
+      "scale": "Kaba Yapı, Cephe, Elektrik, Mekanik, İnce İşler Taşeron/Ekip Sözleşmeleri",
+      "summary": "Ana Yüklenici ile sahadaki taşeron/uzman ekipler arasındaki sorumluluk sınırlarını çizer. Ana sözleşmedeki 28 günlük bildirim süresini kaçırmamak için taşerona daha erken (ör. 14-21 gün) bildirim yükümlülüğü getirir."
+    }
+  ],
+  "clauses": [
+    {
+      "num": "Madde 1",
+      "tr_title": "Genel Hükümler",
+      "en_title": "Clause 1 — General Provisions",
+      "phase": "Temel & Sözleşme Kurulumu",
+      "owner": "Tüm Taraflar (Yatırımcı, Mühendis, Mimar, Yüklenici)",
+      "overview": "Sözleşmenin anayasasıdır. Tüm kavramların sözlük tanımlarını, resmi yazışma kurallarını, dokümanlar çeliştiğinde hangisinin üstün sayılacağını ve geciken projelerde ne yapılacağını belirler.",
+      "subclauses": [
+        [
+          "1.1",
+          "Tanımlar (Definitions)",
+          "2017 baskısında alfabetik sıraya dizilmiş ~90 temel kavramı tanımlar: Base Date (İhale tesliminden 28 gün öncesi baz tarih), Accepted Contract Amount (Kabul Edilen Sözleşme Bedeli), Cost (Maliyet — kâr hariç saha+merkez gideri), Cost Plus Profit (Maliyet + Kâr, aksi yazılmazsa %5 kâr), Day (Takvim günü), DNP (Kusur Bildirim Süresi), IPC (Ara Hakediş Belgesi), Unforeseeable (Deneyimli bir yüklenicinin Baz Tarihte makul olarak öngöremeyeceği durum)."
+        ],
+        [
+          "1.2",
+          "Yorumlama (Interpretation)",
+          "Tekil-çoğul, cinsiyet, kenar başlıkları ve 'yazılı' (written) ifadesinin kalıcı kayıt oluşturan dijital/kağıt metinleri kapsadığını düzenler."
+        ],
+        [
+          "1.3",
+          "Bildirimler ve Diğer İletişimler (Notices and Other Communications)",
+          "KRİTİK KURAL: Bir yazının FIDIC kapsamında resmi 'Bildirim' (Notice) sayılması için üzerinde açıkça 'Notice / Resmi Bildirim' olduğu belirtilmeli, ilgili maddeye atıf yapmalı ve Sözleşme Verilerinde (Contract Data) tanımlı resmi adrese/dijital sisteme iletilmelidir. Rastgele sohbet mesajı resmi bildirim sayılmaz!"
+        ],
+        [
+          "1.4",
+          "Hukuk ve Dil (Law and Language)",
+          "Sözleşmeye uygulanacak ülke hukukunu (Governing Law) ve geçerli iletişim/sözleşme dilini (Ruling Language) belirler."
+        ],
+        [
+          "1.5",
+          "Dokümanların Öncelik Sırası (Priority of Documents)",
+          "Projede çizim ile şartname veya sözleşme çelişirse hangisi geçerlidir? Sıralama: (a) Sözleşme Anlaşması -> (b) Kabul Mektubu (LoA) -> (c) Teklif Mektubu -> (d) Özel Şartlar Bölüm A (Sözleşme Verileri) -> (e) Özel Şartlar Bölüm B -> (f) Genel Şartlar -> (g) Teknik Şartname -> (h) Çizimler -> (i) Metraj/Birim Fiyat Cetveli (BoQ) ve diğer ekler. Bir belirsizlik varsa Mühendis açıklayıcı talimat verir."
+        ],
+        [
+          "1.6",
+          "Sözleşme Anlaşması (Contract Agreement)",
+          "Yüklenici Kabul Mektubunu (Letter of Acceptance) aldıktan sonra 35 gün içinde (1999'da 28 gün) resmi sözleşme metni imzalanır. Ancak Kabul Mektubu ulaştığı anda hukuki bağlayıcılık zaten başlamıştır!"
+        ],
+        [
+          "1.7",
+          "Devir / Temlik (Assignment)",
+          "Hiçbir taraf karşı tarafın önceden yazılı onayı olmadan sözleşmeyi üçüncü bir kişiye devredemez (banka alacak temliki istisnası hariç)."
+        ],
+        [
+          "1.8",
+          "Dokümanların Korunması ve Temini (Care and Supply of Documents)",
+          "Teknik şartname ve çizimler İşverence temin edilir; Yüklenici sahada her zaman güncel onaylı bir takım proje bulundurmak zorundadır. Sahada doküman hatası fark eden taraf derhal diğerini uyarır."
+        ],
+        [
+          "1.9",
+          "Geciken Çizimler veya Talimatlar (Delayed Drawings or Instructions)",
+          "SAHA ALTIN MADDESİ (Kırmızı Kitap): Uygulama projesi veya detay gecikecekse Yüklenici Mühendise önceden ne zaman lazım olduğunu ve gecikirse ne olacağını yazılı bildirir. Buna rağmen çizim gecikirse Yüklenici Süre Uzatımı (EOT) + Maliyet + Kâr (T+M) talep hakkı kazanır!"
+        ],
+        [
+          "1.10",
+          "Yüklenici Dokümanlarının İşverence Kullanımı",
+          "Yüklenicinin hazırladığı hesap, shop-drawing ve as-built projelerin telifi Yüklenicide kalır ancak İşveren yapıyı işletmek, onarmak ve büyütmek için süresiz kullanım lisansına sahiptir."
+        ],
+        [
+          "1.11",
+          "İşveren Dokümanlarının Yüklenicice Kullanımı",
+          "İşverenin verdiği mimari/mühendislik projeleri Yüklenici tarafından İşveren onayı olmadan başka projelerde kullanılamaz veya üçüncü kişilere kopyalanamaz."
+        ],
+        [
+          "1.12",
+          "Gizlilik (Confidentiality)",
+          "Sözleşme ve ticari/teknik sırlar gizlidir; taraflar ticari bilgileri korur."
+        ],
+        [
+          "1.13",
+          "Yasalara Uyum (Compliance with Laws)",
+          "İmar ruhsatı ve kalıcı yapı izinlerini İşveren; şantiye kurulumu, çalışma ve geçici imalat izinlerini Yüklenici alır ve tüm yasalara uyar."
+        ],
+        [
+          "1.14",
+          "Müşterek ve Müteselsil Sorumluluk (Joint and Several Liability)",
+          "Yüklenici bir İş Ortaklığı (JV / Konsorsiyum) ise ortakların her biri İşverene karşı işin tamamından tek başına ve birlikte sorumludur."
+        ],
+        [
+          "1.15",
+          "Sorumluluğun Sınırlandırılması (Limitation of Liability)",
+          "Dolaylı zarar, kâr kaybı ve kullanım kaybı (gecikme cezası, kasıt ve ağır kusur hariç) tazmin edilmez; toplam sorumluluk genellikle Kabul Edilen Sözleşme Bedeli ile sınırlandırılır."
+        ],
+        [
+          "1.16",
+          "Sözleşmenin Sona Ermesi (Contract Termination)",
+          "Sözleşme kapsamındaki yükümlülüklerin ancak Kesin Kabul / İfa Belgesi ve Kesin Hesap sürecinin tamamlanması veya resmi fesih prosedürüyle sona ereceğini düzenler."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 2",
+      "tr_title": "İşveren / Yatırımcı",
+      "en_title": "Clause 2 — The Employer",
+      "phase": "Saha Teslimi & Finansal Güvence",
+      "owner": "Yatırımcı / İşveren",
+      "overview": "Yatırımcının en temel üç görevini düzenler: Şantiyeyi zamanında teslim etmek, resmi izinlerde destek olmak ve projeyi ödeyecek finansal kaynağa sahip olduğunu kanıtlamak.",
+      "subclauses": [
+        [
+          "2.1",
+          "Sahaya Erişim Hakkı (Right of Access to the Site)",
+          "İşveren, Sözleşme Verilerinde belirtilen tarihte şantiyeyi (veya etapları) Yükleniciye teslim etmek zorundadır. Geç yer teslimi yapılırsa Yüklenici Madde 20.2 uyarınca Süre Uzatımı + Maliyet + Kâr (T+M) alır."
+        ],
+        [
+          "2.2",
+          "Yardım / İzin Desteği (Assistance)",
+          "İşveren; gümrük, çalışma izni ve yerel idare ruhsatları konusunda Yükleniciye makul resmi kolaylığı ve yazışma desteğini sağlar."
+        ],
+        [
+          "2.3",
+          "İşveren Personeli ve Diğer Yükleniciler",
+          "İşveren kendi personelinin ve sahada çalıştırdığı diğer bağımsız yüklenicilerin İSG kurallarına uymasını ve ana Yükleniciyle koordineli hareket etmesini sağlar."
+        ],
+        [
+          "2.4",
+          "İşverenin Finansal Düzenlemeleri (Employer's Financial Arrangements)",
+          "YÜKLENİCİ KALKANI: İşveren, Sözleşme Bedelini ödeyebilecek mali kaynağa sahip olduğunu makul talep üzerine 28 gün içinde kanıtlamak zorundadır (2017'de mali kaynak bilgileri baştan Sözleşme Verilerinde açıklanır). Kanıt sunulmazsa Yüklenici Madde 16.1 ile işi yavaşlatabilir/durdurabilir!"
+        ],
+        [
+          "2.5",
+          "Saha Verileri ve Referans Noktaları (Site Data and Items of Reference)",
+          "İşveren elindeki tüm zemin etüdü, hidrolojik ve çevresel verileri ile aplikasyon nirengi noktalarını (kot/koordinat) paylaşmak zorundadır. (Not: 1999 baskısında 2.5 'İşverenin Hak Talepleri' maddesiydi; 2017'de tüm talepler Madde 20 altında birleştirildi!)"
+        ],
+        [
+          "2.6",
+          "İşverence Temin Edilen Malzeme ve Ekipman",
+          "Sözleşmede İşverenin vereceği malzemeler (Free-Issue Materials) varsa zamanında ve hasarsız teslim edilir; teslimden sonra koruma sorumluluğu Yükleniciye geçer."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 3",
+      "tr_title": "Mühendis / Proje Yürütücüsü",
+      "en_title": "Clause 3 — The Engineer",
+      "phase": "Yönetim, Talimat & Tarafsız Karar",
+      "owner": "Proje Yürütücüsü / Müşavir Mühendis",
+      "overview": "Mühendisin çift yönlü rolünü tanımlar: Günlük denetimde İşveren adına hareket ederken, hakediş, süre uzatımı ve anlaşmazlık tespitlerinde (Madde 3.7) tamamen TARAFSIZ olmak zorundadır.",
+      "subclauses": [
+        [
+          "3.1",
+          "Mühendis (The Engineer)",
+          "2017 baskısına göre Mühendis profesyonel niteliklere sahip bir mühendis olmalı ve sözleşme dilini akıcı konuşmalıdır."
+        ],
+        [
+          "3.2",
+          "Mühendisin Görev ve Yetkileri (Engineer's Duties and Authority)",
+          "Mühendisin sözleşmeyi değiştirme (amend) yetkisi yoktur. Özel Şartlarda bazı kararlar (ör. belirli tutarı aşan varyasyon veya EOT) için İşveren ön onayı şart koşulmuş olabilir; ancak acil can/iş güvenliği durumlarında Mühendis İşveren onayı beklemeden talimat verebilir."
+        ],
+        [
+          "3.3",
+          "Mühendis Temsilcisi (The Engineer's Representative)",
+          "Mühendis sahada tam zamanlı duracak bir Şantiye Kontrol Şefi / Temsilci atayabilir."
+        ],
+        [
+          "3.4",
+          "Yetki Devri (Delegation by the Engineer)",
+          "Mühendis bazı denetim görevlerini yardımcılarına yazılı olarak devredebilir, ancak Madde 3.7 kapsamındaki nihai 'Tespit' (Determination) yetkisini devredemez!"
+        ],
+        [
+          "3.5",
+          "Mühendisin Talimatları (Engineer's Instructions)",
+          "Talimatlar yazılı verilir. Bir talimat aslında kapsam değişikliği (Variation) yaratıyorsa ancak Mühendis buna 'Varyasyon' dememişse, Yüklenici işe başlamadan önce derhal yazılı bildirimle bunun bir Varyasyon olduğunu kayda geçirip 7 gün içinde Mühendisten teyit ister!"
+        ],
+        [
+          "3.6",
+          "Mühendisin Değiştirilmesi (Replacement of the Engineer)",
+          "İşveren Mühendisi değiştirmek isterse en az 42 gün önceden Yükleniciye bildirir; Yüklenici haklı gerekçeyle yeni isme itiraz ederse İşveren o kişiyi atayamaz."
+        ],
+        [
+          "3.7",
+          "Anlaşma veya Tespit (Agreement or Determination — 42+42 Gün Kuralı)",
+          "2017'NİN KALBİ: Bir talep veya uyuşmazlık geldiğinde Mühendis tarafsız davranır (shall act neutrally). Önce 42 gün içinde taraflarla istişare edip uzlaştırmaya çalışır; uzlaşma olmazsa ikinci 42 gün içinde gerekçeli 'Tespit' (Determination) kararını verir. Taraflardan biri karardan memnun değilse 28 gün içinde Memnuniyetsizlik Bildirimi (NOD) vermek zorundadır; vermezse karar kesinleşir!"
+        ],
+        [
+          "3.8",
+          "Yönetim Toplantıları (Meetings)",
+          "Mühendis veya Yüklenici gelecekteki işleri ve riskleri görüşmek üzere yönetim toplantısı çağrısı yapabilir; tutanaklar Mühendisce tutulup tüm katılımcılara dağıtılır."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 4",
+      "tr_title": "Yüklenici",
+      "en_title": "Clause 4 — The Contractor",
+      "phase": "Şantiye Kurulumu, Zemin, Kalite, İSG & Raporlama",
+      "owner": "Yüklenici / Şantiye Şefi",
+      "overview": "Şantiyenin gerçek mutfağıdır. Kesin teminattan aplikasyona, zemin sürprizlerinden iş güvenliğine, kalite kontrol sisteminden aylık ilerleme raporlarına kadar 23 alt maddede Yüklenicinin tüm saha sorumluluklarını düzenler.",
+      "subclauses": [
+        [
+          "4.1",
+          "Yüklenicinin Genel Yükümlülükleri",
+          "İşi sözleşmeye uygun şekilde inşa etmek, geçici işleri tasarlamak, gerekli ekipman/malzeme/işgücünü sağlamak ve iş yöntemlerinin (methods of construction) yeterliliğinden sorumlu olmak."
+        ],
+        [
+          "4.2",
+          "Kesin Teminat (Performance Security)",
+          "Kabul Mektubundan itibaren 28 gün içinde verilir. Sözleşme bedeli kümülatif olarak %20'den fazla artarsa teminat tutarı da orantılı artırılır. Kesin Kabul (Performance Certificate) sonrası 21 gün içinde iade edilir."
+        ],
+        [
+          "4.3",
+          "Yüklenici Temsilcisi / Şantiye Şefi",
+          "Tam yetkili, teknik yeterliliğe sahip ve şantiyede tam zamanlı bulunan temsilci atanır; Mühendis onayı olmadan değiştirilemez."
+        ],
+        [
+          "4.4",
+          "Yüklenici Dokümanları (Contractor's Documents)",
+          "İmalat çizimleri (Shop Drawings), hesaplar ve kılavuzlar Mühendis incelemesine (21 gün inceleme süresi) sunulur."
+        ],
+        [
+          "4.5",
+          "Eğitim (Training)",
+          "Varsa işletme personeline tesis/sistem eğitimi verilmesi; eğitim tamamlanmadan iş tamamlanmış sayılmaz."
+        ],
+        [
+          "4.6",
+          "İşbirliği (Co-operation)",
+          "Sahadaki diğer yükleniciler, kamu kurumları ve İşveren personeliyle çalışma alanı koordinasyonu."
+        ],
+        [
+          "4.7",
+          "Aplikasyon / Yerleştirme (Setting Out)",
+          "Yüklenici İşverenin verdiği nirengi/kot noktalarını kontrol eder ve yapıyı aplike eder. Nirengi hatası deneyimli bir yüklenicinin fark edemeyeceği nitelikteyse Yüklenici T+M alır."
+        ],
+        [
+          "4.8",
+          "İş Sağlığı ve Güvenliği Yükümlülükleri (Health and Safety)",
+          "İSG Planı hazırlanması, saha çiti, aydınlatma, KKD kullanımı, İSG uzmanı bulundurulması ve kaza/ramak kala kayıtlarının anlık bildirimi."
+        ],
+        [
+          "4.9",
+          "Kalite Yönetim ve Uygunluk Doğrulama Sistemleri (QA / QC)",
+          "İşe başlamadan itibaren 28 gün içinde Kalite Yönetim Sistemi (QM) ve muayene/test formları kurulur; iç denetimler yapılır."
+        ],
+        [
+          "4.10",
+          "Saha Verilerinin Kullanımı (Use of Site Data)",
+          "Yüklenici Baz Tarihten önce sahayı gezmiş ve ulaşılabilir verileri incelemiş kabul edilir (görünen yüzey koşulları, iklim, ulaşım imkanları)."
+        ],
+        [
+          "4.11",
+          "Kabul Edilen Sözleşme Bedelinin Yeterliliği",
+          "Yüklenici teklif fiyatının tüm sözleşme yükümlülüklerini karşıladığını kabul eder (sözleşmede açıkça istisna tutulan durumlar hariç)."
+        ],
+        [
+          "4.12",
+          "Öngörülemeyen Fiziksel Koşullar (Unforeseeable Physical Conditions)",
+          "ZEMİN SÜRPRİZİ MADDESİ (Kırmızı & Sarı Kitap): Yeraltı su seviyesi, kaya, balçık veya eski yeraltı engeli gibi Baz Tarihte öngörülemeyen fiziksel engeller çıkarsa Yüklenici DERHAL Mühendise bildirir. Doğrulanırsa Süre Uzatımı + Ek Maliyet (T+C, kâr hariç) ödenir! (Gümüş Kitapta bu risk kural olarak Yüklenicidedir)."
+        ],
+        [
+          "4.13",
+          "Geçiş Hakları ve Tesisler",
+          "Şantiye dışı özel geçit ve ek saha ihtiyacı Yükleniciye aittir."
+        ],
+        [
+          "4.14",
+          "Müdahaleden Kaçınma",
+          "Komşu mülklere, trafiğe ve halka gereksiz gürültü/rahatsızlık verilmemesi."
+        ],
+        [
+          "4.15",
+          "Erişim Güzergahı (Access Route)",
+          "Ağır tonajlı nakliye için yol ve köprü uygunluğunun kontrolü Yükleniciye aittir."
+        ],
+        [
+          "4.16",
+          "Malların Taşınması (Transport of Goods)",
+          "Önemli ekipman/malzeme sahaya gelmeden en az 21 gün önce Mühendise sevkiyat bildirimi yapılır."
+        ],
+        [
+          "4.17",
+          "Yüklenici Ekipmanı",
+          "Sahaya getirilen vinç, iş makinesi ve kalıp ekipmanları sadece bu proje için kullanılır; Mühendis izni olmadan sahadan çıkarılamaz."
+        ],
+        [
+          "4.18",
+          "Çevrenin Korunması",
+          "Atık, toz, emisyon ve toprak/su kirliliği sınır değerlerine uyum."
+        ],
+        [
+          "4.19",
+          "Geçici Altyapı / Elektrik, Su, Gaz",
+          "Şantiye elektriği ve suyu saha süzme sayaçlarıyla ölçülür; İşveren şebekesinden kullanılıyorsa tüketim bedeli ödenir."
+        ],
+        [
+          "4.20",
+          "Aylık İlerleme Raporları (Progress Reports)",
+          "Her ay sonundan itibaren 7 gün içinde sunulur: Fotoğraflar, S-Eğrisi, gerçek vs planlanan yüzdeler, malzeme testleri, İSG istatistikleri ve erken uyarı listesi. Hakedişin ön şartıdır!"
+        ],
+        [
+          "4.21",
+          "Sahanın Güvenliği (Security of the Site)",
+          "Yetkisiz kişilerin şantiyeye girişinin engellenmesi, kapı kontrolü ve bekçi/kamera sistemi."
+        ],
+        [
+          "4.22",
+          "Yüklenicinin Sahadaki Faaliyetleri",
+          "Şantiyenin düzenli tutulması, moloz ve hurdaların sürekli temizlenmesi."
+        ],
+        [
+          "4.23",
+          "Arkeolojik ve Jeolojik Bulgular (Fossils)",
+          "Kazıda tarihi eser, sikke veya fosil çıkarsa iş o noktada durdurulup derhal Mühendise bildirilir; oluşan gecikme ve koruma maliyeti (T+C) karşılanır."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 5",
+      "tr_title": "Alt Yüklenicilik (Kırmızı) / Tasarım (Sarı & Gümüş)",
+      "en_title": "Clause 5 — Subcontracting (Red) / Design (Yellow & Silver)",
+      "phase": "Taşeron Yönetimi & Uygulama Tasarımı",
+      "owner": "Yüklenici, Mimar/Tasarımcı, Alt Yükleniciler",
+      "overview": "Kırmızı Kitapta taşeron ve 'Atanmış Alt Yüklenici' (Nominated Subcontractor) kurallarını; Sarı ve Gümüş Kitapta ise Yüklenicinin tüm mimari/mühendislik tasarım sorumluluğunu düzenler.",
+      "subclauses": [
+        [
+          "5.1",
+          "Alt Yükleniciler (Subcontractors — Kırmızı Kitap)",
+          "Yüklenici işin tamamını devredemez! Malzeme tedarikçileri ve sözleşmede adı yazılı taşeronlar hariç tüm alt yükleniciler için en az 28 gün önceden Mühendis onayı alınır. Taşeronun her hatasından Ana Yüklenici bizzat sorumludur."
+        ],
+        [
+          "5.2",
+          "Atanmış Alt Yükleniciler (Nominated Subcontractors)",
+          "İşverenin veya Mühendisin bizzat seçip 'bununla çalışacaksın' dediği özel taşeronlardır (ör. asansör, otomasyon). Yüklenici haklı teknik/mali gerekçeyle 14 gün içinde itiraz edebilir. Önceki hakedişte bu taşerona ödeme yapıldığı kanıtlanmazsa İşveren taşerona doğrudan ödeme yapıp Yüklenici hakedişinden düşebilir."
+        ],
+        [
+          "5.1-5.8 (Sarı/Gümüş)",
+          "Tasarım Yükümlülükleri (Design Obligations — Sarı & Gümüş Kitap)",
+          "Sarı/Gümüş Kitapta Madde 5 tamamen Tasarıma ayrılmıştır: Yüklenici nitelikli mimar ve mühendislerle tasarımı hazırlar, Mühendis 21 gün içinde inceler (No-objection), As-Built çizimleri ve İşletme-Bakım El Kitaplarını teslim eder ve eserin İşveren İhtiyaç Programındaki amaca tam uygunluğunu (Fitness for Purpose) garanti eder."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 6",
+      "tr_title": "Personel ve İşgücü (Puantaj, İSG & Yemek/Kamp)",
+      "en_title": "Clause 6 — Staff and Labour",
+      "phase": "Saha İnsan Kaynakları, İaşe & Günlük Kayıtlar",
+      "owner": "Şantiye Şefi, İdari İşler, Ekipbaşları / Ustalar",
+      "overview": "Şantiyedeki insan unsurunu yönetir: Ücretler, çalışma saatleri, işçi yatakhane ve yemekhaneleri (iaşe), iş sağlığı ve her gün tutulması zorunlu personel/ekipman sayıları.",
+      "subclauses": [
+        [
+          "6.1-6.4",
+          "Personel İstihdamı, Ücretler ve İş Yasaları",
+          "Personelin ulaşım, maaş ve sosyal hakları ilgili iş kanununa ve sektör asgari standartlarının altına düşmeyecek şekilde ödenir."
+        ],
+        [
+          "6.5",
+          "Çalışma Saatleri (Working Hours)",
+          "Sözleşme Verilerinde belirtilen normal çalışma saatleri ve resmi tatiller dışında (acil güvenlik veya Mühendis onayı/vardiyalı iş hariç) sahada gürültülü/kalıcı imalat yapılmaz."
+        ],
+        [
+          "6.6",
+          "Personel ve İşgücü İçin Tesisler (Yemekhane, Konaklama & Su)",
+          "ŞANTİYE YAŞAM MADDESİ: Yüklenici sahadaki tüm çalışanlar için hijyenik yemekhane (kahvaltı/öğle/akşam/gece vardiyası iaşesi), temiz içme suyu, duş/tuvalet ve gerekiyorsa yatakhane kamp tesislerini kurup işletmek zorundadır. Kalıcı yapıların içinde izinsiz koğuş kurulamaz!"
+        ],
+        [
+          "6.7",
+          "Personelin Sağlığı ve Güvenliği",
+          "İlk yardım odası, revir/ambulans erişimi, salgın hastalık önlemleri ve iş güvenliği eğitimleri."
+        ],
+        [
+          "6.8-6.9",
+          "Yüklenici Nezareti ve Personel Nitelikleri",
+          "Her imalat ekibinin başında işin tekniğini ve ortak çalışma dilini bilen yeterli sayıda şef/formen bulunur; Mühendis yetersiz veya iş güvenliğini tehlikeye atan personelin sahadan uzaklaştırılmasını isteyebilir."
+        ],
+        [
+          "6.10",
+          "Yüklenici Kayıtları (Günlük Puantaj & Ekipman Sayıları)",
+          "KRİTİK KANIT MADDESİ: Yüklenici sahadaki her meslek sınıfından (usta, kalfa, düz işçi, operatör, mühendis) kaç kişinin çalıştığını ve her iş makinesinin kaç saat aktif/atıl kaldığını kayıt altına alıp Mühendise sunar. İleride bir gecikme/verimlilik kaybı talebinde en büyük delil bu günlük puantajdır!"
+        ],
+        [
+          "6.11-6.12",
+          "Uygunsuz Davranış & Kilit Personel (Key Personnel)",
+          "Sözleşmede ismen taahhüt edilen Kilit Personel (Proje Müdürü, Şantiye Şefi, Teknik Ofis Şefi vb.) Mühendisin yazılı onayı olmadan değiştirilemez."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 7",
+      "tr_title": "Tesis, Malzeme ve İşçilik",
+      "en_title": "Clause 7 — Plant, Materials and Workmanship",
+      "phase": "Numune Onayı, Muayene & Kalite Kontrol",
+      "owner": "Mimar, Saha Mühendisi, Kalite Kontrol, Ustalar",
+      "overview": "Sahaya giren her malzemenin onaylanmasını, kapanacak imalatların (ör. demir donatı, su yalıtımı) kapatılmadan önce denetlenmesini ve kusurlu işçiliğin reddini düzenler.",
+      "subclauses": [
+        [
+          "7.1",
+          "İmalatın Yürütülme Şekli",
+          "Tüm imalatlar sözleşmeye, iyi mühendislik pratiğine ve güvenlik kurallarına uygun, hatasız malzemeyle yapılır."
+        ],
+        [
+          "7.2",
+          "Numuneler (Samples)",
+          "Seramik, doğaltaş, cephe profili, boya, armatür gibi malzemelerin numuneleri imalata girmeden önce etiketli olarak Mühendis/Mimar onayına sunulur."
+        ],
+        [
+          "7.3",
+          "Muayene ve Üstü Kapatılacak İşler (Inspection)",
+          "Temel donatısı, tesisat borusu veya izolasyon gibi üstü beton/şapla kapatılacak imalatlar kapatılmadan önce Mühendise haber verilir! Haber vermeden kapatılırsa Mühendis açtırıp kontrol ettirebilir ve tüm kırma/yeniden yapma masrafı Yükleniciye ait olur."
+        ],
+        [
+          "7.4",
+          "Yüklenici Tarafından Yapılan Testler",
+          "Beton basınç dayanımı, kaynak röntgeni, sızdırmazlık gibi testlerin zamanı en az 72 saat önceden Mühendise bildirilir. Test gecikmesi İşverenden kaynaklanırsa Yüklenici T+M alır."
+        ],
+        [
+          "7.5",
+          "Kusurlar ve Reddetme (Defects and Rejection)",
+          "Test veya muayenede kusurlu çıkan malzeme/imalat Mühendisce yazılı gerekçeyle reddedilir ve Yüklenici derhal düzeltir."
+        ],
+        [
+          "7.6",
+          "Düzeltme İşleri (Remedial Work)",
+          "Kusurlu işin sökülüp yenilenmesi; Yüklenici makul sürede yapmazsa İşveren başka ekibe yaptırıp bedelini Yükleniciden tahsil edebilir."
+        ],
+        [
+          "7.7-7.8",
+          "Malzeme Mülkiyeti ve Ocak/Telif Hakları (Royalties)",
+          "Sahaya gelen veya bedeli hakedişe giren malzemelerin mülkiyeti takyidatsız şekilde İşverene geçer; kum/taş ocağı rödovans bedelleri Yükleniciye aittir."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 8",
+      "tr_title": "İşe Başlama, Gecikmeler ve İşin Durdurulması",
+      "en_title": "Clause 8 — Commencement, Delays and Suspension",
+      "phase": "Zaman Yönetimi, Hız, Hava Muhalefeti & Süre Uzatımı",
+      "owner": "Proje Yürütücüsü, Planlama Mühendisi, Yatırımcı, Şantiye Şefi",
+      "overview": "Projenin saatidir. İşe başlama tarihini, canlı iş programını, erken uyarı sistemini, hangi hallerde Süre Uzatımı (EOT) kazanılacağını ve gecikme cezasını düzenler.",
+      "subclauses": [
+        [
+          "8.1",
+          "İşe Başlama (Commencement of Works)",
+          "Mühendis işe başlama tarihini en az 14 gün önceden bildirir; aksi kararlaştırılmamışsa Kabul Mektubundan itibaren 42 gün içinde işe başlama tarihi verilir."
+        ],
+        [
+          "8.2",
+          "Tamamlama Süresi (Time for Completion)",
+          "İşlerin (ve varsa kısmi etapların / Sections) testler dahil Geçici Kabule hazır hale getirilmesi gereken sözleşmesel gün süresidir."
+        ],
+        [
+          "8.3",
+          "İş Programı (Programme — Hayati Sözleşme Kuralı!)",
+          "Yüklenici işe başlamadan itibaren 28 gün içinde detaylı kritik yol (CPM) iş programını ve iş yöntem raporunu sunar; Mühendis 21 gün içinde uyumsuz bulmazsa program yürürlüğe girer. ÇOK ÖNEMLİ UYARI: İş Programı ve İş Yöntem Beyanı (Method Statement) canlı yönetim aracıdır; bunları katı 'Sözleşme Anlaşması Eki' haline getirmeyin! Aksi halde tek bir aktivite gününün değişmesi resmi sözleşme tadili gerektirir ve hem İşvereni hem Yükleniciyi sözleşme ihlali tuzağına düşürür."
+        ],
+        [
+          "8.4",
+          "Erken Uyarı (Advance Warning — 2017 Yeniliği)",
+          "Taraflardan herhangi biri maliyeti artıracak, işi geciktirecek veya kaliteyi düşürecek muhtemel bir gelecek olayı fark ettiği anda karşı tarafı ve Mühendisi ÖNCEDEN uyarmak zorundadır! (1999 baskısında 8.4 Süre Uzatımı maddesiydi; 2017'de EOT 8.5'e kaydı)."
+        ],
+        [
+          "8.5",
+          "Tamamlama Süresinin Uzatılması (Extension of Time — EOT)",
+          "Yüklenici şu 5 ana sebeple gecikirse Madde 20.2'ye göre bildirim yapmak şartıyla Süre Uzatımı (EOT) hakkı kazanır: (a) Varyasyon veya önemli metraj artışı, (b) Bu şartnamede EOT hakkı tanıyan bir madde, (c) OLAĞANÜSTÜ OLUMSUZ İKLİM / HAVA KOŞULLARI (bölgenin geçmiş meteorolojik ortalamalarını aşan fırtına, don, sağanak), (d) Salgın hastalık veya hükümet kararları nedeniyle öngörülemeyen personel/malzeme kıtlığı, (e) İşveren, İşveren personeli veya diğer yüklenicilerden kaynaklanan gecikme/engellemeler."
+        ],
+        [
+          "8.6",
+          "Resmi Makamlardan Kaynaklanan Gecikmeler",
+          "Yüklenici belediye, elektrik/su/doğalgaz idaresi veya resmi kurum prosedürlerini zamanında eksiksiz takip ettiği halde kurum öngörülemeyen şekilde geciktirirse EOT hakkı doğar."
+        ],
+        [
+          "8.7",
+          "İlerleme Hızı (Rate of Progress)",
+          "Saha hızı (SPI) geçici kabul tarihini kaçıracak şekilde yavaşlamışsa ve bu Yüklenici kusurundansa, Mühendis Yükleniciye vardiya/ekip artırarak hızlanma talimatı verir (masrafı Yükleniciye aittir; eğer İşveren ek masrafa sebep olursa Madde 20.2 ile Yükleniciden talep edebilir)."
+        ],
+        [
+          "8.8",
+          "Gecikme Cezaları (Delay Damages / Liquidated Damages)",
+          "Yüklenici Tamamlama Süresini (varsa onaylı EOT eklenmiş halini) aşarsa, geciken her gün için Sözleşme Verilerinde yazılı maktu gecikme cezasını öder. Ceza toplamı genellikle sözleşme bedelinin %10'u gibi bir üst sınırla (Cap) sınırlandırılır."
+        ],
+        [
+          "8.9-8.13",
+          "İşveren/Mühendis Talimatıyla İşin Durdurulması (Suspension)",
+          "Mühendis işi durdurma talimatı verirse ve bu durdurma Yüklenici hatasından kaynaklanmıyorsa Yüklenici EOT + Koruma/Bekleme Maliyeti alır. Durdurma aralıksız 84 günü aşarsa Yüklenici o kısmın kapsamdan çıkarılmasını veya tüm iş durmuşsa sözleşmenin feshini isteyebilir!"
+        ]
+      ]
+    },
+    {
+      "num": "Madde 9",
+      "tr_title": "Tamamlama Testleri",
+      "en_title": "Clause 9 — Tests on Completion",
+      "phase": "Devreye Alma & Performans Doğrulama",
+      "owner": "MEP / Test Mühendisleri, Mühendis, Yüklenici",
+      "overview": "Yapı ve mekanik-elektrik sistemlerin Geçici Kabulden önce gerçekten çalışıp çalışmadığının (ön devreye alma, devreye alma ve deneme işletmesi) kanıtlandığı aşamadır.",
+      "subclauses": [
+        [
+          "9.1",
+          "Yüklenicinin Test Yükümlülükleri",
+          "Yüklenici As-Built taslaklarını ve işletme kılavuzlarını sunduktan sonra test tarihini 21 gün önceden bildirir. 3 aşama uygulanır: (a) Ön Devreye Alma Testleri, (b) Devreye Alma Testleri, (c) Deneme İşletmesi (Trial Operation)."
+        ],
+        [
+          "9.2",
+          "Geciken Testler (Delayed Tests)",
+          "Testleri İşveren haksız yere geciktirirse Madde 10.3 devreye girer (T+M). Yüklenici geciktirirse Mühendis 21 gün süre verir; yine yapılmazsa testleri İşveren personeli yapar ve risk/maliyet Yükleniciye yazılır."
+        ],
+        [
+          "9.3",
+          "Yeniden Test Etme (Retesting)",
+          "Başarısız olan sistemler düzeltilip aynı koşullarda tekrar test edilir."
+        ],
+        [
+          "9.4",
+          "Tamamlama Testlerinden Geçememe",
+          "Tekrar teste rağmen sistem geçemezse Mühendis; (a) Tekrar test isteyebilir, (b) İş esas amacından tamamen yoksun kalıyorsa işi/bölümü reddedebilir veya (c) İşveren kabul ederse değer düşüklüğü bedel indirimiyle Geçici Kabul Belgesi düzenleyebilir."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 10",
+      "tr_title": "İşverenin İşleri Teslim Alması (Geçici Kabul)",
+      "en_title": "Clause 10 — Employer's Taking Over",
+      "phase": "Geçici Kabul & Saha Riskinin Devri",
+      "owner": "Yatırımcı, Mühendis, Proje Yürütücüsü, Mimar",
+      "overview": "İnşaatın en kritik dönüm noktasıdır! Geçici Kabul Belgesi (Taking-Over Certificate) düzenlendiği gün; (1) Gecikme cezası sayacı durur, (2) Yapıyı koruma riski Yükleniciden İşverene geçer, (3) Nakit teminat kesintisinin (Retention) ilk yarısı serbest kalır ve (4) Garanti/Kusur Bildirim Süresi (DNP) başlar!",
+      "subclauses": [
+        [
+          "10.1",
+          "İşlerin ve Bölümlerin Teslim Alınması (28 Gün Otomatik Kabul Kuralı!)",
+          "İş kullanıma engel olmayan ufak eksikler (Punch/Snag list) dışında tamamlandığında Yüklenici başvurur. Mühendis 28 gün içinde ya Geçici Kabul Belgesi düzenler ya da red gerekçelerini bildirir. MÜHENDİS 28 GÜN İÇİNDE HİÇ CEVAP VERMEZSE ve iş sözleşmeye esasen uygunsa, 28. günün sonunda Geçici Kabul Belgesi OTOMATİK OLARAK DÜZENLENMİŞ SAYILIR!"
+        ],
+        [
+          "10.2",
+          "İşlerin Bir Kısmının Teslim Alınması / Erken Kullanım",
+          "DİKKAT: İşveren henüz Geçici Kabul Belgesi düzenlenmeden binanın bir katını veya bölümünü fiilen kullanmaya başlarsa (geçici test hariç), o kısım kullanıldığı tarihte resmen teslim alınmış sayılır, o kısım için gecikme cezası orantılı düşer ve Yüklenici doğan ek maliyeti + kârı (M) alır!"
+        ],
+        [
+          "10.3",
+          "Tamamlama Testlerine Müdahale",
+          "İşveren kaynaklı sebeple testler 14 günden fazla engellenirse iş testlerin biteceği tarihte teslim alınmış sayılır ve Yüklenici T+M alır."
+        ],
+        [
+          "10.4",
+          "Eski Haline Getirilecek Yüzeyler",
+          "Geçici şantiye yolları ve peyzaj yüzeylerinin eski haline getirilmesi."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 11",
+      "tr_title": "Teslim Sonrası Kusurlar, Eksikler ve Kesin Kabul",
+      "en_title": "Clause 11 — Defects After Taking Over",
+      "phase": "Eksikler (Punch List), Garanti Süresi (DNP) & Kesin Kabul",
+      "owner": "Mimar, Mühendis, Şantiye Şefi, Ustalar / Taşeronlar",
+      "overview": "Geçici Kabulden sonra başlayan Kusur Bildirim Süresini (DNP — genellikle 365 veya 730 gün), mahallerdeki eksik/kusur listelerinin kapatılmasını ve sözleşmeyi taçlandıran Kesin Kabul (Performance Certificate) belgesini düzenler.",
+      "subclauses": [
+        [
+          "11.1",
+          "Eksik İşlerin Tamamlanması ve Kusurların Giderilmesi (Punch / Snag List)",
+          "Geçici Kabul Belgesine eklenen ufak eksik işler (snag list) belirtilen makul sürede tamamlanır; DNP süresince ortaya çıkan kusurlar da bildirim üzerine giderilir."
+        ],
+        [
+          "11.2",
+          "Kusurları Giderme Maliyeti",
+          "Kusur Yüklenicinin malzeme/işçilik/tasarım hatasından kaynaklanıyorsa ücretsiz düzeltilir; yanlış işletme veya İşveren kullanım hatasından kaynaklanıyorsa Varyasyon (Madde 13) gibi Yükleniciye ödenir!"
+        ],
+        [
+          "11.3",
+          "Kusur Bildirim Süresinin (DNP) Uzatılması",
+          "Bir bölüm kusur yüzünden kullanılamaz hale gelirse İşveren Madde 20.2 ile DNP süresini uzatabilir (toplam uzatma 2 yılı aşamaz)."
+        ],
+        [
+          "11.4",
+          "Kusurları Gidermeme Durumu",
+          "Yüklenici makul sürede gelip kusuru düzeltmezse İşveren; (a) Bedeli Yükleniciden tahsil edilmek üzere işi başkasına yaptırabilir, (b) Makul bedel indirimi yapabilir veya (c) Kusur tüm yapıyı kullanılmaz kılıyorsa sözleşmeyi feshedip ödediği bedeli geri isteyebilir."
+        ],
+        [
+          "11.5-11.7",
+          "Saha Dışında Onarım, Ek Testler ve Erişim Hakkı",
+          "Arızalı ekipmanın fabrikaya götürülüp onarılması (teminat karşılığı), onarım sonrası test tekrarı ve Yüklenici ekiplerine düzeltme için binaya giriş izni verilmesi."
+        ],
+        [
+          "11.8",
+          "Yüklenicinin Kusur Sebebini Araştırması (Contractor to Search)",
+          "Mühendis bir sızıntı/arıza sebebini bulmak için Yükleniciye araştırma talimatı verebilir. Eğer kusur Yükleniciden kaynaklanmıyorsa tüm kırma/araştırma/kapatma maliyeti + kâr (M) Yükleniciye ödenir!"
+        ],
+        [
+          "11.9",
+          "İfa Belgesi / Kesin Kabul (Performance Certificate)",
+          "TÜM SÖZLEŞMENİN TAMAMLANIŞ BELGESİ: DNP süresi dolup tüm eksikler ve As-Built projeler teslim edildikten sonra 28 gün içinde Mühendis 'Performance Certificate' düzenler. Ancak bu belge ile Yüklenicinin işini eksiksiz tamamladığı resmen kabul edilir!"
+        ],
+        [
+          "11.10-11.11",
+          "Yerine Getirilmemiş Yükümlülükler & Sahanın Temizlenmesi",
+          "Kesin Kabulden sonra 28 gün içinde Yüklenici kalan tüm ekipman ve barakalarını sahadan kaldırır; kalan hukuki/mali hesaplaşmalar Kesin Hesapla kapatılır."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 12",
+      "tr_title": "Ölçüm (Metraj) ve Değerlendirme (Kırmızı Kitap)",
+      "en_title": "Clause 12 — Measurement and Valuation",
+      "phase": "Saha Metrajı, Ataşman & Yeni Birim Fiyat",
+      "owner": "Teknik Ofis / Hakediş Mühendisi, Kontrol Mühendisi",
+      "overview": "Kırmızı Kitapta işverenin ödeyeceği para ihaledeki tahmini keşfe göre değil, sahada FİİLEN YAPILAN NET METRAJA göre hesaplanır. (Sarı ve Gümüş Kitapta Madde 12 yerine 'Tamamlama Sonrası Testler / Tests after Completion' yer alır).",
+      "subclauses": [
+        [
+          "12.1",
+          "Ölçülecek İşler (Works to be Measured)",
+          "Mühendis sahada ölçüm yapacağında Yüklenici temsilcisini 7 gün önceden davet eder; birlikte tutulan ataşman/metraj kayıtları imzalanır. Yüklenici katılmazsa Mühendisin ölçümü doğru kabul edilir; Yüklenici katılıp itiraz ederse 14 gün içinde itiraz gerekçesini yazılı sunar."
+        ],
+        [
+          "12.2",
+          "Ölçüm Yöntemi",
+          "Aksi belirtilmedikçe her kalem şişirme payı olmadan projedeki net geometrik miktar üzerinden ölçülür."
+        ],
+        [
+          "12.3",
+          "İşlerin Değerlendirilmesi & Yeni Birim Fiyat Eşikleri",
+          "KRİTİK EŞİK KURALI: Bir iş kalemi için yeni birim fiyat belirlenmesi şu 4 şartın birlikte gerçekleşmesine bağlıdır: (1) İmalat miktarı BoQ'daki miktardan %10'dan fazla (2017'de %10, 1999'da da %10) değişmişse, (2) Miktar farkı × birim fiyat çarpımı Kabul Edilen Sözleşme Bedelinin %0,01'ini aşıyorsa, (3) Miktar değişimi birim maliyeti %1'den fazla değiştiriyorsa ve (4) Kalem sözleşmede 'sabit birim fiyatlı kalem' olarak işaretlenmemişse!"
+        ],
+        [
+          "12.4",
+          "Kapsamdan Çıkarılan İşler (Omissions)",
+          "Bir iş kaleminin varyasyonla iptal edilmesi nedeniyle Yüklenici başka kalemlerle karşılayamadığı sabit genel gider zararına uğrarsa bu maliyeti (C) talep edebilir (Not: İşveren işi Yükleniciden çıkarıp başkasına yaptırmak için Madde 13'ü kötüye kullanamaz!)."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 13",
+      "tr_title": "Değişiklikler (Varyasyonlar) ve Fiyat Düzeltmeleri",
+      "en_title": "Clause 13 — Variations and Adjustments",
+      "phase": "Revizyon Yönetimi, Değer Mühendisliği & Fiyat Farkı",
+      "owner": "Yatırımcı, Mühendis, Mimar, Teknik Ofis",
+      "overview": "İnşaatta projenin hiç değişmemesi imkansızdır. Madde 13 kapsam değişikliklerini, tasarruf önerilerini (Value Engineering), mevzuat değişikliklerini ve enflasyon/maliyet eskalasyonunu kurallı hale getirir.",
+      "subclauses": [
+        [
+          "13.1",
+          "Değişiklik Yapma Hakkı (Right to Vary)",
+          "Geçici Kabul Belgesi düzenlenene kadar Mühendis varyasyon başlatabilir: Miktar artışı/azalışı, kalite değişikliği, kot/konum değişikliği, ek imalat veya sıra değişikliği. Yüklenici, malzeme temin edememe veya iş güvenliği/performans garantisini bozma gibi haklı gerekçesi varsa derhal bildirerek itiraz edebilir."
+        ],
+        [
+          "13.2",
+          "Değer Mühendisliği (Value Engineering — %50 Ödül Kuralı)",
+          "Yüklenici işi hızlandıracak, yapım/işletme maliyetini düşürecek veya verimi artıracak akıllı bir mühendislik önerisi sunabilir. Kırmızı Kitapta bu öneri sözleşme bedelini düşürürse, NET TASARRUFUN %50'Sİ ÖDÜL OLARAK YÜKLENİCİYE ÖDENİR!"
+        ],
+        [
+          "13.3",
+          "Varyasyon Prosedürü (Talimat veya Teklif İsteme)",
+          "Mühendis ya doğrudan Varyasyon Talimatı verir (Yüklenici 28 gün içinde iş programı ve fiyat etkisini sunar) ya da önce Yükleniciden Varyasyon Teklifi ister."
+        ],
+        [
+          "13.4",
+          "Geçici Bedeller (Provisional Sums)",
+          "İhale anında detayı net olmayan işler için bütçeye konulan karşılıktır; yalnızca Mühendis talimatıyla harcanır."
+        ],
+        [
+          "13.5",
+          "Günlük İşler / Puantajlı İşler (Daywork)",
+          "Birim fiyatı olmayan ufak ek işlerin işçilik saati + malzeme faturası + ekipman saati üzerinden günlük imzalı formlarla ödenmesidir."
+        ],
+        [
+          "13.6",
+          "Yasalardaki Değişiklikler Nedeniyle Düzeltme",
+          "Baz Tarihten (ihaleden 28 gün önce) sonra ülkedeki vergi, gümrük, asgari ücret/mevzuat veya teknik yönetmelik değişir ve maliyeti/süreyi etkilerse fark (T+C) düzeltilir!"
+        ],
+        [
+          "13.7",
+          "Maliyet Değişiklikleri Nedeniyle Fiyat Farkı (Price Adjustment — Pn Formülü)",
+          "Demir, çimento, akaryakıt, işçilik ve döviz endekslerindeki artış/azalışları hakedişe yansıtan eskalasyon formülüdür: Pn = a + b*(Ln/Lo) + c*(En/Eo) + d*(Mn/Mo). Burada 'a' sabit katsayı (ör. 0,10), L işçilik, E ekipman/enerji, M malzeme endeksleridir."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 14",
+      "tr_title": "Sözleşme Bedeli ve Ödeme (Hakediş Döngüsü)",
+      "en_title": "Clause 14 — Contract Price and Payment",
+      "phase": "Avans, Aylık Ara Hakediş (IPC), Nakit Akışı & Kesin Hesap",
+      "owner": "Yatırımcı, Mühendis, Teknik Ofis / Finans",
+      "overview": "Projenin kan dolaşımı olan nakit akışını yönetir: Avans ödemesi, aylık hakediş başvurusu, 28 günde onay, 56 günde ödeme, gecikme finansman faizi ve kesin hesap.",
+      "subclauses": [
+        [
+          "14.1",
+          "Sözleşme Bedeli",
+          "Kırmızı Kitapta ölçüm esaslı, Sarı ve Gümüş Kitapta götürü bedel esaslıdır; vergiler dahil olup olmadığı netleştirilir."
+        ],
+        [
+          "14.2",
+          "Avans Ödemesi (Advance Payment)",
+          "Yüklenici Avans Teminat Mektubu sunduğunda mobilizasyon için faizsiz avans ödenir ve izleyen hakedişlerden yüzde kesintilerle mahsup edilir."
+        ],
+        [
+          "14.3",
+          "Ara Hakediş Başvurusu (Application for Interim Payment)",
+          "Yüklenici her ay sonunda (Aylık İlerleme Raporu ile birlikte!) yapılan imalat tutarı, varyasyonlar, ihzarat, fiyat farkı ve kesintileri içeren Hakediş Beyanını (Statement) sunar."
+        ],
+        [
+          "14.4-14.5",
+          "Ödeme Takvimi & Sahadaki Malzeme/İhzarat (Plant and Materials)",
+          "Sözleşmede listelenen ana malzemeler (ör. çiller, asansör, çelik, cephe camı) sahaya indirildiğinde veya gemiye yüklendiğinde bedelinin genellikle %80'i ihzarat olarak ara hakedişe girer."
+        ],
+        [
+          "14.6",
+          "Ara Hakediş Belgesinin (IPC) Düzenlenmesi (28 Gün Kuralı)",
+          "Mühendis, Yüklenici beyanını aldıktan sonra EN GEÇ 28 GÜN İÇİNDE Ara Hakediş Belgesini (IPC) düzenleyip İşveren ve Yükleniciye iletir. Tartışmalı bir kalem varsa sadece o kalem bekletilir, hak edilen geri kalan tutar bekletilemez!"
+        ],
+        [
+          "14.7",
+          "Ödeme Süresi (56 Gün Kuralı)",
+          "İşveren; Avansı 21 gün içinde, Ara Hakedişleri (IPC) ise hakediş beyanının Mühendise ulaştığı tarihten itibaren EN GEÇ 56 GÜN İÇİNDE (ve Kesin Hakedişi FPC düzenlenmesinden 56 gün içinde) Yüklenici banka hesabına öder."
+        ],
+        [
+          "14.8",
+          "Geciken Ödemeler (Delayed Payment — Otomatik Finansman Bedeli)",
+          "Ödeme gecikirse Yüklenicinin resmi ihtar çekmesine veya dava açmasına gerek kalmadan, geciken her gün için merkez bankası iskonto oranı + %3 yıllık bileşik finansman gideri otomatik işler!"
+        ],
+        [
+          "14.9",
+          "Nakit Teminat Kesintisinin İadesi (Retention Money)",
+          "Hakedişlerden kesilen nakit teminatın (ör. %5-%10) İLK YARISI Geçici Kabul Belgesi düzenlendiğinde, İKİNCİ YARISI ise DNP süresi bitiminde iade edilir."
+        ],
+        [
+          "14.10-14.15",
+          "Bitiş Hakedişi, Kesin Hesap (Final Statement), İbraname & Kesin Hakediş (FPC)",
+          "Geçici Kabulden sonra 84 gün içinde Bitiş Hakedişi; Kesin Kabulden (Performance Certificate) sonra 56 gün içinde Taslak Kesin Hesap sunulur, İbraname (Discharge) ile birlikte 28 gün içinde Kesin Hakediş Belgesi (FPC) düzenlenir."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 15",
+      "tr_title": "İşveren Tarafından Sözleşmenin Feshi",
+      "en_title": "Clause 15 — Termination by Employer",
+      "phase": "Düzeltme İhtarı & Kusurlu / Takdiri Fesih",
+      "owner": "Yatırımcı / İşveren, Hukuk Müşaviri, Mühendis",
+      "overview": "Yüklenicinin işi terk etmesi, iflası veya ağır kusuru halinde fesih şartlarını ve İşverenin kendi isteğiyle (takdiri) fesih yaptığında ödeyeceği kâr tazminatını düzenler.",
+      "subclauses": [
+        [
+          "15.1",
+          "Düzeltme Bildirimi (Notice to Correct)",
+          "Yüklenici bir yükümlülüğünü aksatırsa Mühendis makul süre vererek 'Düzeltme İhtarı' gönderir. Feshe gitmeden önce bu ihtarın usulüne uygun yapılması hayati önemdedir."
+        ],
+        [
+          "15.2",
+          "Yüklenicinin Kusuru Nedeniyle Fesih",
+          "Kesin teminat vermeme, Düzeltme İhtarına uymama, şantiyeyi terk etme, izinsiz tüm işi devretme, gecikme cezası tavanını aşma, iflas veya rüşvet/yolsuzluk hallerinde İşveren 14 gün süreli (iflas/yolsuzlukta derhal) bildirimle sözleşmeyi feshedebilir."
+        ],
+        [
+          "15.3-15.4",
+          "Fesih Sonrası Değerlendirme ve Ödeme",
+          "Saha durumu tespit edilir; yeni yükleniciyle işi tamamlama ek maliyeti ve zararlar hesaplanana kadar Yükleniciye ek ödeme durdurulur."
+        ],
+        [
+          "15.5-15.7",
+          "İşverenin Takdiriyle (Keyfi) Fesih (Termination for Employer's Convenience)",
+          "KRİTİK KURAL: İşveren Yüklenicinin hiçbir suçu yokken projeden vazgeçip feshedebilir; ANCAK işi başkasına yaptırmak amacıyla bu maddeyi kullanamaz! Ve 2017 baskısına göre bu şekilde feshederse Yükleniciye sadece yaptığı işi ve demobilizasyon masrafını değil, KAÇIRDIĞI KÂR KAYBINI DA ödemek zorundadır!"
+        ]
+      ]
+    },
+    {
+      "num": "Madde 16",
+      "tr_title": "Yüklenici Tarafından İşin Askıya Alınması ve Fesih",
+      "en_title": "Clause 16 — Suspension and Termination by Contractor",
+      "phase": "Ödeme Güvencesi, İşi Yavaşlatma & Haklı Fesih",
+      "owner": "Yüklenici Yönetimi, Finans & Hukuk",
+      "overview": "Yükleniciyi ödenmeyen hakedişlere karşı koruyan en güçlü yasal kalkandır: 21 gün önceden ihtar çekerek işi yavaşlatma/durdurma ve devamında haklı fesih hakkı tanır.",
+      "subclauses": [
+        [
+          "16.1",
+          "Yüklenicinin İşi Askıya Alma / Yavaşlatma Hakkı",
+          "Mühendis 28 günde IPC düzenlemezse, İşveren 56 günde ödeme yapmazsa veya Madde 2.4 finansal kanıtı sunmazsa; Yüklenici 21 gün önceden yazılı bildirim göndererek ödeme yapılana kadar saha hızını düşürebilir veya işi tamamen durdurabilir ve tüm bekleme süresini + maliyeti + kârı (T+M) alır!"
+        ],
+        [
+          "16.2",
+          "Yüklenici Tarafından Fesih",
+          "Ödeme vadesinden sonra 42 gün geçtiği halde hâlâ ödenmezse, finansal kanıt ihtardan 42 gün sonra hâlâ verilmezse, tüm iş 84 günden fazla durdurulursa veya İşveren iflas ederse Yüklenici 14 gün bildirimle sözleşmeyi fesheder."
+        ],
+        [
+          "16.3-16.4",
+          "Fesih Sonrası Yükümlülükler ve Tazminat Ödemesi",
+          "Yüklenici can güvenliği önlemlerini alıp sahadan çekilir, kesin teminatı derhal iade edilir ve yapılan iş bedeli + demobilizasyon + KÂR KAYBI İşverence Yükleniciye ödenir."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 17",
+      "tr_title": "İşlerin Korunması ve Tazminatlar",
+      "en_title": "Clause 17 — Care of the Works and Indemnities",
+      "phase": "Saha Koruma Sorumluluğu & Risk Paylaşımı",
+      "owner": "Yüklenici, Yatırımcı, Sigorta Yönetimi",
+      "overview": "İşe başlama tarihinden Geçici Kabule kadar binaya/şantiyeye bir zarar gelirse bunu kimin onaracağını ve karşılıklı tazminat sınırlarını belirler.",
+      "subclauses": [
+        [
+          "17.1",
+          "İşlerin Korunması Sorumluluğu",
+          "İşe Başlama Tarihinden Geçici Kabul Belgesi düzenlenene kadar tüm yapı, malzeme ve dokümanların korunması Yüklenici sorumluluğundadır; Geçici Kabulden sonra sorumluluk İşverene geçer."
+        ],
+        [
+          "17.2",
+          "İşlerin Korunmasına İlişkin Muafiyet / İşveren Riskleri",
+          "Savaş, ayaklanma, İşverenin kendi tasarım hatası (Kırmızı Kitapta), İşverenin erken kullanımı veya doğa güçlerinin öngörülemez yıkımı sonucu hasar oluşursa Yüklenici Mühendis talimatıyla onarır ve T+M (veya T+C) alır."
+        ],
+        [
+          "17.3-17.6",
+          "Fikri Mülkiyet ve Karşılıklı Tazminatlar",
+          "Bedensel yaralanma, üçüncü şahıs mal hasarı ve patent/telif ihlallerinde tarafların birbirini tazmin etme kuralları ve ortak kusurda orantılı paylaşım."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 18",
+      "tr_title": "İstisnai Olaylar (Mücbir Sebep / Force Majeure)",
+      "en_title": "Clause 18 — Exceptional Events",
+      "phase": "Savaş, Afet, Salgın & Olağanüstü Kriz Yönetimi",
+      "owner": "Yatırımcı ve Yüklenici Üst Yönetimi",
+      "overview": "1999 baskısındaki 'Force Majeure' (Madde 19) kavramı 2017'de 'Exceptional Events' (Madde 18) adını almıştır. Tarafların kontrolü dışındaki olağanüstü olayları yönetir.",
+      "subclauses": [
+        [
+          "18.1",
+          "İstisnai Olayların Tanımı",
+          "4 şartı taşır: Tarafın kontrolü dışında olması, sözleşme imzalanırken makul önlem alınamaması, ortaya çıktığında kaçınılamaması ve diğer tarafa atfedilememesi (Savaş, terör, isyan, radyasyon, deprem, tsunami, volkan, tayfun, genel grev)."
+        ],
+        [
+          "18.2",
+          "İstisnai Olay Bildirimi (14 Gün Kuralı!)",
+          "Etkilenen taraf olayı öğrendiği tarihten itibaren EN GEÇ 14 GÜN İÇİNDE karşı tarafa bildirim göndermek zorundadır! 14 gün kaçırılırsa mazeret ancak bildirimin ulaştığı tarihten sonrası için geçerli olur."
+        ],
+        [
+          "18.3-18.4",
+          "Gecikmeyi Azaltma Ödevi & Mali/Zaman Sonuçları",
+          "Her iki taraf hasarı en aza indirmek için çaba gösterir. Tüm İstisnai Olaylar EOT kazandırır; savaş, ülke içi isyan/terör gibi insan kaynaklı olaylar ayrıca Maliyet (C) tazmini de sağlar."
+        ],
+        [
+          "18.5-18.6",
+          "İhtiyari Fesih (84 / 140 Gün) ve İmkansızlık",
+          "İstisnai olay nedeniyle iş aralıksız 84 gün veya toplamda 140 gün durursa herhangi bir taraf 7 gün bildirimle sözleşmeyi feshedebilir; yapılan iş ve saha söküm bedeli Yükleniciye ödenir."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 19",
+      "tr_title": "Sigortalar",
+      "en_title": "Clause 19 — Insurance",
+      "phase": "CAR All-Risk, Mali Mesuliyet & Mesleki Sorumluluk",
+      "owner": "Finans/Sigorta Birimi, Yüklenici, Mimar/Tasarımcı",
+      "overview": "Şantiyeyi felaketlere karşı güvenceye alan zorunlu poliçeleri (İnşaat All-Risk CAR, Ekipman, 3. Şahıs Mali Mesuliyet, İşveren Mali Mesuliyet ve Tasarım Mesleki Sorumluluk) düzenler.",
+      "subclauses": [
+        [
+          "19.1",
+          "Genel Sigorta Şartları",
+          "Poliçeler İşveren ve Yüklenici ortak adına (Joint Names) düzenlenir; poliçe kopyaları ve prim makbuzları zamanında sunulmazsa karşı taraf poliçeyi kendisi yaptırıp primini hakedişten kesebilir."
+        ],
+        [
+          "19.2",
+          "Yüklenici Tarafından Yaptırılacak Sigortalar",
+          "(1) İşler ve Malzemeler All-Risk (CAR — yeniden yapım bedeli +%15 enkaz kaldırma/mesleki ücret), (2) Yüklenici Ekipman Sigortası, (3) Tasarım Kusuru / Mesleki Sorumluluk Sigortası (PI), (4) Üçüncü Şahıs Bedeni/Maddi Zarar Sigortası, (5) Personel İş Kazası Sigortası."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 20",
+      "tr_title": "İşveren ve Yüklenici Hak Talepleri (28 Gün Altın Kalkanı!)",
+      "en_title": "Clause 20 — Employer's and Contractor's Claims",
+      "phase": "Hak Arama, 28 Gün Time-Bar, Çağdaş Kayıt & 84 Gün Dosya",
+      "owner": "Proje Yürütücüsü, Sözleşme/Claim Uzmanı, Yatırımcı, Yüklenici",
+      "overview": "TÜM FIDIC KİTAPLARININ EN KRİTİK MADDESİDİR! 2017 baskısında hem İşveren hem Yüklenici aynı katı takvime bağlanmıştır. 28 günlük ilk bildirim süresini kaçıran taraf HAKKINI TAMAMEN KAYBEDER (Time-Barred)!",
+      "subclauses": [
+        [
+          "20.1",
+          "Hak Taleplerinin Sınıflandırılması",
+          "Ek ödeme, sözleşme bedeli indirimi, DNP uzatımı veya Süre Uzatımı (EOT) talepleri Madde 20.2'ye tabidir; diğer hukuki/idari hak talepleri doğrudan Madde 3.7 sürecine gider."
+        ],
+        [
+          "20.2.1",
+          "Hak Talebi Bildirimi (Notice of Claim — 28 GÜN KESİN SÜRE!)",
+          "Talep eden taraf (Yüklenici veya İşveren), olayı fark ettiği veya fark etmesi gerektiği tarihten itibaren EN GEÇ 28 TAKVİM GÜNÜ İÇİNDE Mühendise yazılı 'Notice of Claim' sunmak zorundadır! 28 gün içinde bildirim yapılmazsa süre uzatımı ve ek ödeme hakkı düşer, karşı taraf sorumluluktan kurtulur!"
+        ],
+        [
+          "20.2.2",
+          "Mühendisin Ön İncelemesi (14 Gün Kuralı!)",
+          "Mühendis bildirimin 28 günü kaçırdığını düşünüyorsa, bildirimi aldıktan sonra 14 GÜN İÇİNDE bunu gerekçesiyle bildirmek zorundadır! Mühendis 14 gün içinde 'geç kaldın' demezse bildirim geçerli sayılır!"
+        ],
+        [
+          "20.2.3",
+          "Çağdaş Kayıtlar (Contemporary Records)",
+          "Olay yaşandığı anda tutulan günlük şantiye raporu, fotoğraf, video, hava durumu kaydı, puantaj, malzeme irsaliyesi ve yazışmalar 'Çağdaş Kayıt'tır. Mühendis bu kayıtları sahada denetler. ('Kayıt yoksa hak da yoktur!')"
+        ],
+        [
+          "20.2.4",
+          "Tam Detaylı Hak Talebi Dosyası (Fully Detailed Claim — 84 Gün!)",
+          "Olayın fark edilmesinden itibaren 84 GÜN İÇİNDE (1999'da 42 gündü) olayın öyküsü, sözleşmesel/hukuki dayanak maddesi, zaman etki analizi (TIA) ve kuruşu kuruşuna maliyet hesabı sunulur. Bu 84 gün içinde sözleşmesel dayanak sunulmazsa ikinci kez hak düşümü riski doğar!"
+        ],
+        [
+          "20.2.5-20.2.7",
+          "Devam Eden Olaylar ve Mühendisin Tespit Süreci",
+          "Olay aylarca sürüyorsa (ör. devam eden su baskını veya çizim gecikmesi) her 28 günde bir ara güncel talep, olay bittikten 28 gün sonra nihai talep verilir ve Mühendis Madde 3.7 (42+42 gün) ile kararı bağlar."
+        ]
+      ]
+    },
+    {
+      "num": "Madde 21",
+      "tr_title": "Uyuşmazlıklar, DAAB Kurulu ve Tahkim",
+      "en_title": "Clause 21 — Disputes and Arbitration",
+      "phase": "Uyuşmazlık Önleme (DAAB), Dostane Çözüm & Tahkim",
+      "owner": "Yatırımcı, Yüklenici, DAAB Üyeleri, Hukuk Ekibi",
+      "overview": "Şantiyeyi mahkeme kapılarında kilitlemeden çözen 4 basamaklı modern sistemdir: (1) DAAB ile Erken Uyuşmazlık Önleme -> (2) 84 Günde Bağlayıcı DAAB Kararı -> (3) 28 Gün Dostane Müzakere -> (4) Uluslararası Tahkim.",
+      "subclauses": [
+        [
+          "21.1-21.2",
+          "Daimi DAAB Kurulunun Oluşturulması (28 Gün)",
+          "Projenin en başında (sözleşmeden 28 gün içinde) 1 veya 3 bağımsız uzmandan oluşan Daimi Uyuşmazlık Önleme ve Çözüm Kurulu (Standing DAAB) atanır; sahayı periyodik ziyaret eder."
+        ],
+        [
+          "21.3",
+          "Uyuşmazlıkların Önlenmesi (Avoidance of Disputes)",
+          "Taraflar birlikte başvurarak bir sorun henüz kavgaya dönüşmeden DAAB kurulundan bağlayıcı olmayan uzman görüşü ve çözüm desteği alabilirler."
+        ],
+        [
+          "21.4",
+          "DAAB Kararının Alınması (42 Gün Başvuru + 84 Gün Karar)",
+          "Mühendisin Madde 3.7 tespitine 28 gün içinde NOD (Memnuniyetsizlik Bildirimi) veren taraf, NOD tarihinden itibaren 42 GÜN İÇİNDE konuyu DAAB'a taşımalıdır! DAAB 84 GÜN İÇİNDE gerekçeli kararını verir. Bu karar taraflar için DERHAL BAĞLAYICIDIR (itiraz edilse bile ödenir/uygulanır!). Memnun olmayan taraf 28 gün içinde DAAB kararına karşı NOD vermezse karar nihai ve kesin hale gelir."
+        ],
+        [
+          "21.5",
+          "Dostane Çözüm (Amicable Settlement — 28 Gün)",
+          "Tahkim davası açılmadan önce taraflara son kez masada anlaşmaları için en az 28 günlük bekleme/müzakere süresi tanınır."
+        ],
+        [
+          "21.6-21.8",
+          "Tahkim (Arbitration) ve DAAB Kararının İcrası",
+          "Dostane çözüm olmazsa uyuşmazlık ICC (Milletlerarası Ticaret Odası) kurallarına göre 1 veya 3 hakemli tahkimle kesin çözülür."
+        ]
+      ]
+    }
+  ],
+  "greenBook": [
+    {
+      "num": "Madde 1",
+      "title": "Genel Hükümler",
+      "desc": "Tanımlar, yazışmalar, uygulanacak hukuk, dil ve doküman önceliği."
+    },
+    {
+      "num": "Madde 2",
+      "title": "İşveren",
+      "desc": "Sahaya erişim izni, ruhsat/izin yardımı ve İşveren talimatları."
+    },
+    {
+      "num": "Madde 3",
+      "title": "İşveren Temsilcisi",
+      "desc": "Mühendis yerine daha sade olan 'Yetkili Kişi / İşveren Temsilcisi' ataması."
+    },
+    {
+      "num": "Madde 4",
+      "title": "Yüklenici",
+      "desc": "Genel yapım borcu, şantiye temsilcisi, alt yüklenicilik yasağı/onayı ve kesin teminat."
+    },
+    {
+      "num": "Madde 5",
+      "title": "Yüklenici Tasarımı",
+      "desc": "Projede Yüklenicinin çizdiği kısımlar varsa bunların amaca uygunluk (fitness for purpose) garantisi."
+    },
+    {
+      "num": "Madde 6",
+      "title": "İşveren Riskleri (Employer's Liabilities)",
+      "desc": "Savaş, afet, erken kullanım, İşveren tasarım hatası, öngörülemeyen zemin ve geciken talimatlar tek listede toplanmıştır!"
+    },
+    {
+      "num": "Madde 7",
+      "title": "Tamamlama Süresi",
+      "desc": "İş programı, Madde 6 olaylarında Süre Uzatımı (EOT) ve gecikme cezası."
+    },
+    {
+      "num": "Madde 8",
+      "title": "Teslim Alma (Geçici Kabul)",
+      "desc": "İşin tamamlanması ve Teslim Alma Bildirimi."
+    },
+    {
+      "num": "Madde 9",
+      "title": "Kusurların Giderilmesi",
+      "desc": "Genellikle 180–365 günlük garanti süresinde eksik ve kusurların ücretsiz onarımı."
+    },
+    {
+      "num": "Madde 10",
+      "title": "Değişiklikler ve Hak Talepleri",
+      "desc": "Varyasyon fiyatlandırması ve erken bildirim prosedürü."
+    },
+    {
+      "num": "Madde 11",
+      "title": "Sözleşme Bedeli ve Ödeme",
+      "desc": "Aylık hakedişler, teminat kesintisinin iki aşamada iadesi, kesin ödeme ve gecikme faizi."
+    },
+    {
+      "num": "Madde 12",
+      "title": "Temerrüt ve Fesih",
+      "desc": "Yüklenici veya İşveren kusuruyla fesih, iflas ve fesih sonrası ödeme."
+    },
+    {
+      "num": "Madde 13",
+      "title": "Risk ve Sorumluluk",
+      "desc": "İşlerin korunması sorumluluğu ve Mücbir Sebep."
+    },
+    {
+      "num": "Madde 14",
+      "title": "Sigortalar",
+      "desc": "Yapı, ekipman, 3. şahıs ve işçi sigortaları."
+    },
+    {
+      "num": "Madde 15",
+      "title": "Uyuşmazlıkların Çözümü",
+      "desc": "Tek hakemli hızlı Hakem/Adjudicator kararı ve nihai tahkim."
+    }
+  ],
+  "whiteBook": [
+    {
+      "num": "Madde 1",
+      "title": "Genel Hükümler",
+      "desc": "Tanımlar, bildirimler, fikri mülkiyet/telif hakları, gizlilik ve iyi niyet (good faith) ilkesi."
+    },
+    {
+      "num": "Madde 2",
+      "title": "İşveren (Client)",
+      "desc": "Proje verilerinin ücretsiz temini, sahaya erişim, karar verme süreleri ve diğer danışmanlarla koordinasyon."
+    },
+    {
+      "num": "Madde 3",
+      "title": "Müşavir / Mimar (Consultant)",
+      "desc": "Hizmetin 'Makul Mesleki Beceri ve Özenle' (Reasonable Skill & Care) yürütülmesi, personel kalitesi ve sözleşme yönetimi yetkisi."
+    },
+    {
+      "num": "Madde 4",
+      "title": "Başlama ve Tamamlama",
+      "desc": "Hizmet takvimi, gecikmeler ve olağanüstü olaylar."
+    },
+    {
+      "num": "Madde 5",
+      "title": "Hizmetlerde Değişiklik (Variations)",
+      "desc": "2017 5. Baskıda bağımsız madde olmuştur: Revize proje veya ek kapsam taleplerinin ücret ve süreye etkisi."
+    },
+    {
+      "num": "Madde 6",
+      "title": "Hizmetlerin Durdurulması ve Fesih",
+      "desc": "Ödeme gecikmesinde Müşavirin hizmeti askıya alma hakkı ve karşılıklı fesih hükümleri."
+    },
+    {
+      "num": "Madde 7",
+      "title": "Ödeme (Payment)",
+      "desc": "Ücret yapısı (Zaman esaslı, Götürü veya Maliyet yüzdesi), fatura vadesi ve gecikme finansman bedeli."
+    },
+    {
+      "num": "Madde 8",
+      "title": "Sorumluluklar (Liabilities)",
+      "desc": "Mesleki kusur sorumluluk süresi, tazminat üst sınırı (Cap) ve dolaylı zarar istisnası."
+    },
+    {
+      "num": "Madde 9",
+      "title": "Sigorta",
+      "desc": "Mesleki Sorumluluk Sigortası (Professional Indemnity Insurance) ve kamu mali mesuliyet poliçesi."
+    },
+    {
+      "num": "Madde 10",
+      "title": "Uyuşmazlıklar ve Tahkim",
+      "desc": "Dostane müzakere -> Adjudication (Uzman Kararı) -> Tahkim."
+    }
+  ],
+  "timeBars": [
+    {
+      "days": "Derhal / Anında",
+      "clause": "Madde 1.8 / 4.12 / 8.4",
+      "desc": "Doküman hatası, öngörülemeyen zemin engeli ve geleceğe dönük Erken Uyarı (Advance Warning) bildirimi."
+    },
+    {
+      "days": "7 Gün",
+      "clause": "Madde 3.5 / 4.20",
+      "desc": "Mühendis talimatının Varyasyon sayıldığına dair teyit talebi; her ay sonundan itibaren Aylık İlerleme Raporu teslimi."
+    },
+    {
+      "days": "14 Gün",
+      "clause": "Madde 8.1 / 18.2 / 20.2.2",
+      "desc": "İşe başlama ön bildirimi; İstisnai Olay (Mücbir Sebep) bildirimi; Mühendisin geç kalan hak talebine ön itiraz süresi."
+    },
+    {
+      "days": "21 Gün",
+      "clause": "Madde 4.4 / 8.3 / 14.7 / 16.1",
+      "desc": "Doküman ve İş Programı inceleme süresi; Avans ödeme süresi; ödenmeyen hakedişte Yüklenicinin işi yavaşlatma/durdurma ön ihtarı."
+    },
+    {
+      "days": "28 Gün (ALTIN SÜRE)",
+      "clause": "Madde 4.2 / 8.3 / 10.1 / 14.6 / 20.2.1 / 3.7.5 / 21.4.4",
+      "desc": "Kesin Teminat teslimi; İş Programı teslimi; Geçici Kabul Belgesi düzenleme (cevap yoksa otomatik kabul!); IPC Ara Hakediş düzenleme; HAK DÜŞÜRÜCÜ İLK TALEP BİLDİRİMİ (Time-Bar!); Memnuniyetsizlik Bildirimi (NOD)."
+    },
+    {
+      "days": "35 Gün",
+      "clause": "Madde 1.6",
+      "desc": "Kabul Mektubundan sonra Sözleşme Anlaşmasının imzalanması (1999 baskısında 28 gün)."
+    },
+    {
+      "days": "42 Gün",
+      "clause": "Madde 3.7 / 8.1 / 21.4.1",
+      "desc": "Mühendisin uzlaştırma (42g) ve tespit (ek 42g) süreleri; varsayılan en geç işe başlama; NOD sonrası uyuşmazlığı DAAB'a taşıma kesin süresi."
+    },
+    {
+      "days": "56 Gün",
+      "clause": "Madde 14.7 / 14.11",
+      "desc": "İşverenin Ara Hakedişi (IPC) banka hesabına ödeme vadesi; Kesin Kabul sonrası Taslak Kesin Hesap sunumu."
+    },
+    {
+      "days": "84 Gün",
+      "clause": "Madde 8.11 / 14.10 / 18.5 / 20.2.4 / 21.4.3",
+      "desc": "Uzun süreli iş durdurma sınırı; Geçici Kabul sonrası Bitiş Hakedişi; Mücbir sebeple fesih eşiği; TAM DETAYLI HAK TALEBİ DOSYASI sunumu; DAAB kurulunun karar verme süresi."
+    },
+    {
+      "days": "140 Gün",
+      "clause": "Madde 18.5",
+      "desc": "Kesintili birden fazla İstisnai Olayın toplam durdurma süresi fesih eşiği."
+    },
+    {
+      "days": "365 – 730 Gün",
+      "clause": "Madde 11.1",
+      "desc": "Tipik Kusur Bildirim / Garanti Süresi (DNP — Defects Notification Period)."
+    }
+  ],
+  "contractorClaims": [
+    {
+      "clause": "1.9",
+      "event": "Geciken Çizimler veya Talimatlar (Kırmızı Kitap)",
+      "entitlement": "T + M (Süre + Maliyet + Kâr)",
+      "notice": "Önceden planlı çizim ihtiyaç bildirimi + Madde 20.2 (28 gün)"
+    },
+    {
+      "clause": "2.1",
+      "event": "Sahaya / Şantiyeye Geç Erişim Verilmesi",
+      "entitlement": "T + M (Süre + Maliyet + Kâr)",
+      "notice": "Madde 20.2 (28 gün)"
+    },
+    {
+      "clause": "4.7",
+      "event": "İşverence Verilen Aplikasyon / Nirengi Hataları",
+      "entitlement": "T + M (Süre + Maliyet + Kâr)",
+      "notice": "Deneyimli yüklenicinin fark edemeyeceği hata + Madde 20.2"
+    },
+    {
+      "clause": "4.12",
+      "event": "Öngörülemeyen Fiziksel Zemin Koşulları (Kırmızı/Sarı)",
+      "entitlement": "T + C (Süre + Maliyet, Kâr Hariç)",
+      "notice": "Derhal saha inceleme çağrısı + Madde 20.2 (28 gün)"
+    },
+    {
+      "clause": "4.23",
+      "event": "Arkeolojik Eser, Kalıntı ve Fosil Bulguları (1999: 4.24)",
+      "entitlement": "T + C (Süre + Maliyet)",
+      "notice": "Derhal durdurup Mühendise bildirim + Madde 20.2"
+    },
+    {
+      "clause": "7.4 / 10.3",
+      "event": "İşveren Kaynaklı Test Gecikmesi / Testlere Müdahale",
+      "entitlement": "T + M (Süre + Maliyet + Kâr)",
+      "notice": "Madde 20.2 (28 gün)"
+    },
+    {
+      "clause": "8.5(c)",
+      "event": "Olağanüstü Olumsuz Hava / İklim Koşulları (1999: 8.4)",
+      "entitlement": "Sadece T (Süre Uzatımı, Para Yok)",
+      "notice": "Meteoroloji kayıtlarıyla Madde 20.2 (28 gün)"
+    },
+    {
+      "clause": "8.6",
+      "event": "Resmi Kurum / Belediye Kaynaklı Öngörülemeyen Gecikme (1999: 8.5)",
+      "entitlement": "Sadece T (Süre Uzatımı)",
+      "notice": "Zamanında eksiksiz başvuru kanıtı + Madde 20.2"
+    },
+    {
+      "clause": "8.10",
+      "event": "Mühendis Talimatıyla İşin Durdurulması Sonuçları (1999: 8.9)",
+      "entitlement": "T + C (Süre + Maliyet)",
+      "notice": "Yüklenici kusuru olmaması + Madde 20.2"
+    },
+    {
+      "clause": "10.2",
+      "event": "İşverenin Binanın Bir Kısmını Erken Kullanmaya Başlaması",
+      "entitlement": "M (Maliyet + Kâr)",
+      "notice": "O kısım otomatik Geçici Kabul sayılır + Madde 20.2"
+    },
+    {
+      "clause": "11.8",
+      "event": "Yüklenici Hatası Çıkmayan Kusur Araştırma Talimatı",
+      "entitlement": "M (Maliyet + Kâr)",
+      "notice": "Madde 20.2 (28 gün)"
+    },
+    {
+      "clause": "12.4",
+      "event": "Varyasyonla İş Kalemi İptali Nedeniyle Karşılanamayan Gider",
+      "entitlement": "C (Maliyet)",
+      "notice": "Kırmızı Kitap ölçüm hesabı + Madde 20.2"
+    },
+    {
+      "clause": "13.2",
+      "event": "Değer Mühendisliği (Value Engineering) Tasarruf Önerisi",
+      "entitlement": "Net Tasarrufun %50'si Ödül",
+      "notice": "Kırmızı Kitap Madde 13.2 yazılı onaylı proje"
+    },
+    {
+      "clause": "13.6",
+      "event": "Baz Tarihten Sonra Yasa / Vergi / Mevzuat Değişikliği (1999: 13.7)",
+      "entitlement": "T + C (Süre + Maliyet)",
+      "notice": "Resmi Gazete / yasa kanıtı + Madde 20.2"
+    },
+    {
+      "clause": "14.8",
+      "event": "İşverenin Hakediş Ödemesini Geciktirmesi",
+      "entitlement": "Bileşik Finansman Gideri (Faiz)",
+      "notice": "Otomatik işler (Resmi ihtar şartı aranmaz!)"
+    },
+    {
+      "clause": "16.1",
+      "event": "Ödenmeyen Hakediş Nedeniyle İşi Yavaşlatma / Askıya Alma",
+      "entitlement": "T + M (Süre + Maliyet + Kâr)",
+      "notice": "21 gün önceden askıya alma ihtarı + Madde 20.2"
+    },
+    {
+      "clause": "17.2",
+      "event": "İşveren Riskleri Nedeniyle İşlerde Oluşan Hasarın Onarımı",
+      "entitlement": "T + M (Tasarımsa) / T + C",
+      "notice": "Madde 20.2 (28 gün)"
+    },
+    {
+      "clause": "18.4",
+      "event": "İstisnai Olaylar / Mücbir Sebep (1999: 19.4)",
+      "entitlement": "T (Doğal Afet) veya T + C (Savaş/Terör)",
+      "notice": "14 gün içinde Mücbir Sebep bildirimi!"
+    }
+  ],
+  "employerClaims": [
+    {
+      "clause": "4.2",
+      "event": "Kesin Teminatın Süresinin Uzatılmaması / İcrası",
+      "entitlement": "Teminatın Nakde Çevrilmesi",
+      "notice": "Vadeden 28 gün önce uzatılmazsa tam tutar çekilebilir"
+    },
+    {
+      "clause": "4.19 / 2.6",
+      "event": "Şantiye Elektrik, Su, Gaz ve İşveren Ekipmanı Kullanımı",
+      "entitlement": "Tüketim Bedeli Kesintisi",
+      "notice": "Süzme sayaç / tutanak üzerinden hakedişten mahsup"
+    },
+    {
+      "clause": "5.2",
+      "event": "Atanmış Alt Yükleniciye Ödeme Yapılmaması",
+      "entitlement": "Doğrudan Ödeme & Hakediş Kesintisi",
+      "notice": "Ana yüklenici kanıt sunamazsa İşveren ödeyip keser"
+    },
+    {
+      "clause": "7.5 / 7.6",
+      "event": "Reddedilen Malzeme / Kusurlu İmalatın Başkasına Yaptırılması",
+      "entitlement": "C (Onarım & Yeniden Test Maliyeti)",
+      "notice": "Madde 20.2 (28 gün bildirim)"
+    },
+    {
+      "clause": "8.7",
+      "event": "Yavaş İlerleme Nedeniyle İşverenin Ek Denetim Maliyeti",
+      "entitlement": "C (Ek İşveren Masrafı)",
+      "notice": "Madde 20.2 (28 gün bildirim)"
+    },
+    {
+      "clause": "8.8",
+      "event": "Tamamlama Süresinin Aşılması (Gecikme Cezası)",
+      "entitlement": "Günlük Maktu Ceza (Delay Damages)",
+      "notice": "Madde 20.2 bildirimi ZORUNLUDUR! (28 gün kaçarsa ceza yanabilir!)"
+    },
+    {
+      "clause": "9.4 / 11.4",
+      "event": "Testten Geçemeyen veya Giderilmeyen Kusurlu İş",
+      "entitlement": "Bedel İndirimi / Başkasına Yaptırma / Fesih",
+      "notice": "Madde 20.2 (28 gün bildirim)"
+    },
+    {
+      "clause": "11.3",
+      "event": "Kusur Nedeniyle Kullanılamayan Bölüm İçin DNP Uzatımı",
+      "entitlement": "Garanti Süresi Uzatımı (Maks. +2 Yıl)",
+      "notice": "Madde 20.2 (28 gün bildirim)"
+    },
+    {
+      "clause": "15.4",
+      "event": "Yüklenici Kusuruyla Fesih Sonrası Tamamlama Ek Maliyeti",
+      "entitlement": "Zarar + Yeni Yüklenici Fiyat Farkı",
+      "notice": "Fesih ve kesin hesaplaşma prosedürü"
+    }
+  ],
+  "qa": [
+    {
+      "q": "Sözlü şantiye talimatı (ör. 'Şu duvarı 30 cm sağa kaydır') FIDIC'te geçerli midir?",
+      "a": "Hayır! Madde 1.3 ve 3.5 uyarınca tüm talimatlar yazılı olmalıdır. Sahada sözlü bir talimat verildiyse Şantiye Şefi derhal yazılı teyit göndermeli; Mühendis 2 iş günü / 7 gün içinde reddetmezse yazılı talimat haline dönüşmesi sağlanmalıdır."
+    },
+    {
+      "q": "Sözleşme metni henüz imzalanmadı ama Kabul Mektubu (Letter of Acceptance) geldi; sözleşme kurulmuş sayılır mı?",
+      "a": "Evet! Kabul Mektubu Yükleniciye ulaştığı anda sözleşme hukuken kurulmuş olur ve Kesin Teminat (28 gün) ile İşe Başlama takvimi işlemeye başlar."
+    },
+    {
+      "q": "İş Programını (Programme) ve İş Yöntem Beyanını (Method Statement) sözleşme anlaşmasına resmi ek yaparsak ne olur?",
+      "a": "Büyük bir hukuki tuzaktır! Klasördeki High Court içtihadında ve slaytlarında vurgulandığı gibi, iş programı 'sözleşme dokümanı' yapılırsa en ufak aktivite sırası değişimi resmi sözleşme tadili gerektirir; Yüklenicinin kendi yöntemini esnetme hakkı kilitlenir ve İşveren yöntem riskini kendi üstüne almış olur!"
+    },
+    {
+      "q": "28 günlük Hak Talebi Bildirimi (Madde 20.2.1) kaçırılırsa gerçekten tüm hak yanar mı?",
+      "a": "Evet, kural olarak hak düşürücü süredir (Time-Bar). Ancak 2017 baskısında iki can simidi vardır: (1) Mühendis bildirimi aldıktan sonra 14 gün içinde 'süreyi kaçırdın' diye yazılı itiraz etmezse bildirim geçerli sayılır; (2) Geç kalmanın haklı mazereti varsa (ör. İşverenin zaten olayı bilmesi vb.) Mühendis/DAAB gecikmeyi affedebilir. Yine de sistemimiz 28 günü asla kaçırtmaz!"
+    },
+    {
+      "q": "Gecikme (Delay) ile Verimlilik Kaybı (Disruption) arasındaki fark nedir?",
+      "a": "Gecikme (Delay) işin bitiş tarihinin ileri kaymasıdır (kritik yolu etkiler). Verimlilik Kaybı (Disruption) ise bitiş tarihi değişmese bile sürekli kesinti, dar çalışma alanı veya parça parça çizim yüzünden 10 ustanın günde 100 m² yerine 55 m² iş üretebilmesidir! Disruption için EOT gerekmez, doğrudan işçilik/ekipman verim kaybı maliyeti (Loss of Productivity) talep edilir."
+    },
+    {
+      "q": "Eşzamanlı Gecikme (Concurrent Delay) nedir ve sonuçları nasıl çözülür?",
+      "a": "Aynı zaman diliminde hem İşveren kaynaklı bir gecikme (ör. revize proje bekleniyor) hem de Yüklenici kaynaklı bir gecikme (ör. kalıp ekibi eksik) yaşanmasıdır. Uluslararası yerleşik yaklaşıma (Malmaison Prensibi / SCL Protokolü) göre Yükleniciye Süre Uzatımı (EOT) verilir (gecikme cezası kesilmez), ancak kendi gecikmesi de olduğu için uzayan süreye ait bekleme maliyeti (Prolongation Cost) ödenmez ('Time but no Money')."
+    },
+    {
+      "q": "Örtülü Hızlandırma (Constructive Acceleration) nedir?",
+      "a": "Yüklenici haklı bir Süre Uzatımı (EOT) talebinde bulunduğu halde Mühendisin EOT vermeyi haksız yere reddedip 'Sözleşme bitiş tarihinde bitirmezsen gecikme cezası keserim' diye baskı yapması üzerine Yüklenicinin fazla mesai ve ek ekip kurarak masraf yapmasıdır. Haklı EOT sonradan kanıtlandığında bu hızlandırma masrafları talep edilir."
+    },
+    {
+      "q": "Hudson Formülü ne işe yarar ve nasıl hesaplanır?",
+      "a": "İşveren kaynaklı gecikmelerde Yüklenicinin şantiye dışı 'Merkez Ofis Genel Gider ve Kâr Kaybını' hesaplar: [(Merkez Genel Gider + Kâr Yüzdesi) / 100] × [Sözleşme Bedeli / Sözleşme Hafta Süresi] × Gecikilen Hafta Sayısı."
+    },
+    {
+      "q": "Hakedişimiz 56 gün geçtiği halde ödenmedi; şantiyeyi hemen terk edebilir miyiz?",
+      "a": "Hayır, şantiyeyi doğrudan terk etmek sizi haksız duruma düşürür! Doğru yol Madde 16.1'dir: Önce 21 gün süreli resmi 'Askıya Alma / Yavaşlatma İhtarı' gönderilir; 21. gün sonunda iş yavaşlatılır veya durdurulur. Vadeden 42 gün geçtiği halde hâlâ ödenmezse Madde 16.2 ile 14 gün süreli resmi Fesih Bildirimi yapılır."
+    },
+    {
+      "q": "As-Built (Yapıldı) Projeleri teslim edilmezse ne olur?",
+      "a": "Madde 4.4 / 5.6 ve 9.1 / 11.9 uyarınca As-Built projeleri ve işletme-bakım kılavuzları teslim edilmeden Tamamlama Testlerine başlanamaz, Geçici Kabul ve Kesin Kabul (Performance Certificate) düzenlenmez ve son teminatlar serbest bırakılmaz."
+    },
+    {
+      "q": "Mikro ölçekli bir villa veya mağaza tadilatında 225 sayfalık Kırmızı Kitap kullanmak şart mı?",
+      "a": "Hayır! FIDIC tam bunun için 15 maddelik Yeşil Kitabı (Green Book — Short Form of Contract) çıkarmıştır. Karmaşık bürokrasi olmadan iş tanımı, süre, hakediş, kusur garantisi ve uyuşmazlık çözümünü sade ve eksiksiz yönetir."
+    },
+    {
+      "q": "Şantiyede olağanüstü yağmur veya fırtına çıktığında hem süre hem para alabilir miyiz?",
+      "a": "Madde 8.5(c) kapsamında olağanüstü olumsuz iklim koşulları (bölgenin uzun yıllar ortalamasını aşan hava muhalefeti) Yükleniciye SADECE Süre Uzatımı (EOT) kazandırır (gecikme cezasından kurtarır); ancak kimsenin suçu olmadığı için bekleme parası ödenmez. (Deprem/kasırga Madde 18 İstisnai Olay boyutundaysa hasar onarımı ayrıca değerlendirilir)."
+    }
+  ],
+  "files": [
+    {
+      "index": 1,
+      "file": "1-131012192924.pdf",
+      "size_mb": 0.47,
+      "tr_title": "FIDIC Sözleşme Şartları Kılavuz Nüshası (73s)",
+      "tr_desc": "Klasik FIDIC sözleşme yapısı, genel şartlar ve uygulama notları."
+    },
+    {
+      "index": 2,
+      "file": "11 DAB.pdf",
+      "size_mb": 0.27,
+      "tr_title": "Uyuşmazlık Çözüm Kurulu (DAB / DAAB) Çalışma Rehberi (60s)",
+      "tr_desc": "DAB kurulunun atanması, saha ziyaretleri, karar alma süreçleri ve tahkim öncesi işleyişi."
+    },
+    {
+      "index": 3,
+      "file": "2 zhang_risk_mgt_2006.pdf",
+      "size_mb": 0.4,
+      "tr_title": "İnşaat Projelerinde Risk Yönetimi Makalesi — Zhang (10s)",
+      "tr_desc": "Uluslararası inşaat sözleşmelerinde sistematik risk analizi ve dağıtımı."
+    },
+    {
+      "index": 4,
+      "file": "200 Questions and Answers.pdf",
+      "size_mb": 2.76,
+      "tr_title": "İnşaat Sözleşmeleri ve FIDIC Üzerine 200 Soru ve Cevap (220s)",
+      "tr_desc": "Sözleşme hukuku, ihale, teminatlar, taşeronluk, hakediş ve claim konularında 200 pratik vaka sorusu."
+    },
+    {
+      "index": 5,
+      "file": "23-05-03-FIDIC-White-Book.pdf",
+      "size_mb": 0.75,
+      "tr_title": "FIDIC Beyaz Kitap (2017 5. Baskı) Sunum ve Farklar Rehberi (26s)",
+      "tr_desc": "İşveren-Müşavir/Mimar hizmet sözleşmesinin 4. ve 5. baskı karşılaştırması ve 10 ana maddesi."
+    },
+    {
+      "index": 6,
+      "file": "A Useful Guide to SWOT Analysis-2.pdf",
+      "size_mb": 1.61,
+      "tr_title": "Proje ve İhale Öncesi SWOT Analizi Uygulama Rehberi (57s)",
+      "tr_desc": "Güçlü/zayıf yönler ile fırsat ve tehditlerin ihale ve yatırım kararlarında analizi."
+    },
+    {
+      "index": 7,
+      "file": "Acceleration claims.pdf",
+      "size_mb": 1.27,
+      "tr_title": "Hızlandırma Talepleri (Acceleration Claims) Uzmanlık Raporu (40s)",
+      "tr_desc": "Talimatlı ve örtülü (constructive) hızlandırma şartları, vardiya/verim kaybı maliyet hesabı."
+    },
+    {
+      "index": 8,
+      "file": "Chief Operating Officer.pdf",
+      "size_mb": 0.13,
+      "tr_title": "Üst Düzey Operasyon Yöneticisi (COO) Görev Tanımı (2s)",
+      "tr_desc": "İnşaat/proje şirketlerinde operasyonel liderlik ve sorumluluk çerçevesi."
+    },
+    {
+      "index": 9,
+      "file": "Claim Notice.pdf",
+      "size_mb": 0.95,
+      "tr_title": "Hak Talebi Bildirimi (Claim Notice) ve 28 Gün Time-Bar Rehberi (13s)",
+      "tr_desc": "Zamanında bildirim yapmanın hukuki önemi, örnek bildirim unsurları ve hak düşümü kararları."
+    },
+    {
+      "index": 10,
+      "file": "Construction Claims Analysis Checklist-1.pdf",
+      "size_mb": 0.65,
+      "tr_title": "İnşaat Hak Talepleri (Claims) Analiz Kontrol Listesi — Kopya 1 (14s)",
+      "tr_desc": "Bir hak talebi dosyasını hazırlarken veya denetlerken kontrol edilecek kanıt ve nedensellik adımları."
+    },
+    {
+      "index": 11,
+      "file": "Construction Claims Analysis Checklist.pdf",
+      "size_mb": 0.65,
+      "tr_title": "İnşaat Hak Talepleri (Claims) Analiz Kontrol Listesi (14s)",
+      "tr_desc": "Sebep-sonuç bağı, sözleşme maddesi, zaman etkisi ve maliyet doğrulama kontrol listesi."
+    },
+    {
+      "index": 12,
+      "file": "Construction Claims Prevention.pdf",
+      "size_mb": 2.15,
+      "tr_title": "İnşaatta Hak Taleplerini ve Anlaşmazlıkları Önleme Rehberi (63s)",
+      "tr_desc": "İhale aşamasından kabule kadar ihtilafları doğmadan önleyen proaktif yönetim adımları."
+    },
+    {
+      "index": 13,
+      "file": "Contract Checklist (2).pdf",
+      "size_mb": 0.16,
+      "tr_title": "Sözleşme İnceleme ve İmza Öncesi Kontrol Listesi — Özet (15s)",
+      "tr_desc": "İmza öncesi risk, teminat, ceza, ödeme ve fesih maddelerini tarama cetveli."
+    },
+    {
+      "index": 14,
+      "file": "Contract management.pdf",
+      "size_mb": 2.25,
+      "tr_title": "Sözleşme Yönetimi (Contract Management) En İyi Uygulamalar Rehberi (53s)",
+      "tr_desc": "Sözleşme yaşam döngüsü, performans takibi, tedarikçi yönetimi ve yönetişim kuralları."
+    },
+    {
+      "index": 15,
+      "file": "Cost Control for the Project Manager.pdf",
+      "size_mb": 0.75,
+      "tr_title": "Proje Yöneticileri İçin Maliyet Kontrolü (13s)",
+      "tr_desc": "Kazanılmış Değer Yönetimi (EVM), bütçe sapma takibi ve maliyet öngörü teknikleri."
+    },
+    {
+      "index": 16,
+      "file": "Cost Estimating Guidance.pdf",
+      "size_mb": 3.66,
+      "tr_title": "Maliyet Tahmini Uygulama Kılavuzu (44s)",
+      "tr_desc": "Proje aşamalarına göre keşif hassasiyeti, beklenmeyen gider (contingency) ve eskalasyon hesabı."
+    },
+    {
+      "index": 17,
+      "file": "Cost Estimating Guide.pdf",
+      "size_mb": 1.85,
+      "tr_title": "Kapsamlı Keşif ve Maliyet Tahmin Rehberi (59s)",
+      "tr_desc": "Altyapı ve üstyapı projelerinde birim fiyat, işçilik, ekipman ve risk bazlı maliyet çıkarma."
+    },
+    {
+      "index": 18,
+      "file": "Cost Estimating Requirements.pdf",
+      "size_mb": 2.17,
+      "tr_title": "Maliyet Tahmini Standart ve Gereksinimleri (46s)",
+      "tr_desc": "Metraj kırılım yapısı (WBS/CBS), baz tahmin doğrulaması ve bağımsız maliyet kontrolü."
+    },
+    {
+      "index": 19,
+      "file": "Digital Transformation of FIDIC Contracts.pdf",
+      "size_mb": 41.76,
+      "tr_title": "FIDIC 2017 Kırmızı Kitap Sözleşme Yönetiminin Dijitalleştirilmesi (198s)",
+      "tr_desc": "Mobilizasyondan kesin hesaba kadar 60+ sözleşme sürecinin yazılım iş akışlarına dönüştürülmesi!"
+    },
+    {
+      "index": 20,
+      "file": "Dispute.pdf",
+      "size_mb": 1.09,
+      "tr_title": "İnşaat Uyuşmazlıklarının Çözüm Yöntemleri Özeti (14s)",
+      "tr_desc": "Müzakere, arabuluculuk, uzman tespiti, DAB ve tahkim süreçlerinin karşılaştırması."
+    },
+    {
+      "index": 21,
+      "file": "Disputes.pdf",
+      "size_mb": 1.14,
+      "tr_title": "Uluslararası İnşaat Uyuşmazlıkları ve Yönetimi (25s)",
+      "tr_desc": "Çok uluslu projelerde uyuşmazlık sebepleri, delil yönetimi ve çözüm stratejileri."
+    },
+    {
+      "index": 22,
+      "file": "EOT and Cost - FIDIC Red Book 1999.pdf",
+      "size_mb": 0.23,
+      "tr_title": "FIDIC 1999 Kırmızı Kitapta Süre Uzatımı (EOT) ve Maliyet Tablosu (5s)",
+      "tr_desc": "Hangi alt maddenin süre, maliyet ve kâr hakkı verdiğini özetleyen hızlı başvuru cetveli."
+    },
+    {
+      "index": 23,
+      "file": "Effective Change Order Management.pdf",
+      "size_mb": 0.87,
+      "tr_title": "Etkin Değişiklik Emri (Change Order / Varyasyon) Yönetimi (33s)",
+      "tr_desc": "Kapsam değişikliklerinin fiyatlandırılması, kümülatif etki analizi ve onay yönetimi."
+    },
+    {
+      "index": 24,
+      "file": "FIDIC CONTRACT Handbook .pdf",
+      "size_mb": 2.04,
+      "tr_title": "2017 FIDIC Sözleşmeleri Uygulama El Kitabı (244s)",
+      "tr_desc": "2017 Kırmızı, Sarı ve Gümüş Kitapların pratik saha uygulaması, akış şemaları ve örnek yazışmaları."
+    },
+    {
+      "index": 25,
+      "file": "FIDIC PROCUREMENT PROCEDURES GUIDE.pdf",
+      "size_mb": 6.58,
+      "tr_title": "FIDIC İhale ve Tedarik Prosedürleri Rehberi (249s)",
+      "tr_desc": "Ön yeterlilikten ihale dosyası hazırlamaya, teklif değerlendirmeden sözleşme imzasına tam ihale kitabı."
+    },
+    {
+      "index": 26,
+      "file": "FIDIC Red Book 2017.pdf",
+      "size_mb": 1.87,
+      "tr_title": "FIDIC Kırmızı Kitap 2017 (2. Baskı) Ana Kaynak (225s)",
+      "tr_desc": "Yapım İşleri Genel Şartları (Madde 1–21), Özel Şart Hazırlama Rehberi, Teminat ve DAAB Formları."
+    },
+    {
+      "index": 27,
+      "file": "FIDIC SB 2017.pdf.pdf",
+      "size_mb": 0.67,
+      "tr_title": "FIDIC Gümüş Kitap 2017 Özet ve Temel Değişiklikler Notu (21s)",
+      "tr_desc": "2017 EPC/Turnkey sözleşmesindeki yeni maddeler ve risk dağılımı özeti."
+    },
+    {
+      "index": 28,
+      "file": "FIDIC SILVER BOOK 2017.pdf",
+      "size_mb": 1.88,
+      "tr_title": "FIDIC Gümüş Kitap 2017 (2. Baskı) Ana Kaynak (223s)",
+      "tr_desc": "EPC / Anahtar Teslim sözleşmesinin Madde 1–21 tam yapısı."
+    },
+    {
+      "index": 29,
+      "file": "FIDIC Silver Book 2017 (2).pdf",
+      "size_mb": 7.08,
+      "tr_title": "FIDIC Gümüş Kitap 2017 (2. Baskı) Tam Metin — Yüksek Çözünürlük (223s)",
+      "tr_desc": "EPC / Anahtar Teslim Projeler için Genel Şartlar, Özel Şartlar ve Ekler."
+    },
+    {
+      "index": 30,
+      "file": "FIDIC Yellow Book 2017.pdf",
+      "size_mb": 6.63,
+      "tr_title": "FIDIC Sarı Kitap 2017 (2. Baskı) Ana Kaynak (231s)",
+      "tr_desc": "Tesis ve Tasarla-Yap (Design-Build) Projeleri için Genel Şartlar, Özel Şartlar ve Formlar."
+    },
+    {
+      "index": 31,
+      "file": "FIDIC contracts guidance .pdf",
+      "size_mb": 0.93,
+      "tr_title": "Olağanüstü Durumların (Salgın vb.) FIDIC Sözleşmelerine Etkisi Kılavuzu (25s)",
+      "tr_desc": "FIDIC resmi kılavuzu: Salgın, tedarik zinciri kırılması ve idari kısıtlamalarda madde uygulamaları."
+    },
+    {
+      "index": 32,
+      "file": "FIDIC's New Suite of Contracts - Clauses 17 to 19.pdf",
+      "size_mb": 0.2,
+      "tr_title": "Yeni FIDIC Serisinde Madde 17, 18 ve 19 İncelemesi (17s)",
+      "tr_desc": "İşlerin korunması, tazminatlar, İstisnai Olaylar (Mücbir Sebep) ve Sigortalar derin analizi."
+    },
+    {
+      "index": 33,
+      "file": "FIDIC-Model-Services-Agreement.pdf",
+      "size_mb": 13.85,
+      "tr_title": "FIDIC Model Hizmet (Müşavirlik/Mimarlık) Sözleşmesi Tam Kitap (48s)",
+      "tr_desc": "Beyaz Kitap sözleşme formu, genel/özel şartlar ve ücretlendirme ekleri."
+    },
+    {
+      "index": 34,
+      "file": "FIDIC_Suite_of_Contracts_0.pdf",
+      "size_mb": 0.31,
+      "tr_title": "FIDIC Gökkuşağı Sözleşme Ailesine Genel Bakış (9s)",
+      "tr_desc": "Hangi projenin hangi FIDIC kitabıyla yürütülmesi gerektiğini gösteren karar ağacı."
+    },
+    {
+      "index": 35,
+      "file": "FIDIC_contract_users_newsletter_10.pdf",
+      "size_mb": 1.8,
+      "tr_title": "FIDIC Sözleşme Kullanıcıları Bülteni — Sayı 10 (9s)",
+      "tr_desc": "Güncel sözleşme güncellemeleri, DAAB uygulamaları ve uluslararası vaka notları."
+    },
+    {
+      "index": 36,
+      "file": "Fidic-Gold-Book DBO.pdf",
+      "size_mb": 1.16,
+      "tr_title": "FIDIC Altın Kitap (Gold Book — Tasarla, Yap ve İşlet / DBO) (158s)",
+      "tr_desc": "Uzun vadeli (20 yıl) işletme dönemini kapsayan entegre tasarım-yapım-işletme sözleşmesi."
+    },
+    {
+      "index": 37,
+      "file": "Guideline.pdf",
+      "size_mb": 0.53,
+      "tr_title": "Proje ve Kalite Yönetimi Uygulama Rehberi (80s)",
+      "tr_desc": "Mühendislik ve müşavirlik hizmetlerinde kalite, etik ve sürdürülebilirlik ilkeleri."
+    },
+    {
+      "index": 38,
+      "file": "Hints & Tips for Project Intelligence & Megaprojects.pdf",
+      "size_mb": 1.55,
+      "tr_title": "Mega Projeler ve Proje Zekası İçin İpuçları (97s)",
+      "tr_desc": "Şehir ve altyapı ölçeğindeki büyük projelerde erken uyarı, veri analitiği ve yönetişim."
+    },
+    {
+      "index": 39,
+      "file": "IOEGC-2019-Summer-042_Price Adjustment.pdf",
+      "size_mb": 0.25,
+      "tr_title": "İnşaat Sözleşmelerinde Fiyat Farkı (Price Adjustment) Akademik Analizi (6s)",
+      "tr_desc": "Pn eskalasyon formülündeki katsayıların ve endeks seçimlerinin maliyet dengesine etkisi."
+    },
+    {
+      "index": 40,
+      "file": "Loss.pdf",
+      "size_mb": 0.75,
+      "tr_title": "Verimlilik Kaybı ve Zarar Hesaplama Yöntemleri (Loss & Expense) (11s)",
+      "tr_desc": "Measured Mile (Ölçülmüş Mil) yöntemi, genel gider kaybı ve finansman zararı hesapları."
+    },
+    {
+      "index": 41,
+      "file": "New FIDIC White Book_ The Key Changes.pdf",
+      "size_mb": 0.05,
+      "tr_title": "Yeni FIDIC Beyaz Kitaptaki Temel Değişiklikler Özeti (4s)",
+      "tr_desc": "2017 Beyaz Kitapta müşavirin özen borcu (Skill & Care vs Fitness for Purpose) netleştirmesi."
+    },
+    {
+      "index": 42,
+      "file": "Procurement-price-adjustment (ADB).pdf",
+      "size_mb": 2.27,
+      "tr_title": " Uluslararası İhalelerde Fiyat Farkı (Price Adjustment) Kılavuzu (37s)",
+      "tr_desc": "Çok para birimli projelerde eskalasyon formülü kurgusu ve sayısal uygulama örnekleri."
+    },
+    {
+      "index": 43,
+      "file": "THE ALLOCATION OF RISK IN FIDIC PART I.pdf",
+      "size_mb": 2.62,
+      "tr_title": "FIDIC Sözleşmelerinde Risk Dağılımı — Bölüm I (6s)",
+      "tr_desc": "Kırmızı, Sarı ve Gümüş Kitaplar arasında tasarım, zemin ve maliyet risklerinin karşılaştırması."
+    },
+    {
+      "index": 44,
+      "file": "THE ALLOCATION OF RISK IN FIDIC PART II.pdf",
+      "size_mb": 2.76,
+      "tr_title": "FIDIC Sözleşmelerinde Risk Dağılımı — Bölüm II (8s)",
+      "tr_desc": "Mücbir sebep, mevzuat değişikliği ve gecikme risklerinin sözleşmesel dengesi."
+    },
+    {
+      "index": 45,
+      "file": "Termination.pdf",
+      "size_mb": 0.67,
+      "tr_title": "İnşaat Sözleşmelerinde Fesih (Termination) Rehberi (33s)",
+      "tr_desc": "Sözleşmesel fesih ile genel hukuk feshi ayrımı, haksız fesih riskleri ve saha devir adımları."
+    },
+    {
+      "index": 46,
+      "file": "Types of Claims Used In Construction.pdf",
+      "size_mb": 6.33,
+      "tr_title": "İnşaatta Kullanılan Hak Talebi Türleri (17s)",
+      "tr_desc": "Kapsam değişikliği, gecikme, hızlandırma, farklı zemin ve sözleşme yorumu talepleri."
+    },
+    {
+      "index": 47,
+      "file": "User Guide for Procurement of Works.pdf",
+      "size_mb": 0.81,
+      "tr_title": "Yapım İşleri İhale Dokümanı Hazırlama Kullanıcı Kılavuzu (150s)",
+      "tr_desc": "Standart ihale şartnamesi, yeterlilik kriterleri ve Özel Şartlar (COPA) doldurma rehberi."
+    },
+    {
+      "index": 48,
+      "file": "Vim vs Deluge.pdf",
+      "size_mb": 1.34,
+      "tr_title": "Örnek İnşaat/Sigorta Temyiz Mahkemesi Kararı Metni (150s)",
+      "tr_desc": "Sözleşme yorumu, nedensellik ve hasar sorumluluğu üzerine kapsamlı yargı içtihadı."
+    },
+    {
+      "index": 49,
+      "file": "What are delay and disruption_.pdf",
+      "size_mb": 2.38,
+      "tr_title": "Gecikme (Delay) ve Verimlilik Kaybı (Disruption) Nedir? (5s)",
+      "tr_desc": "İki kavramın net farkı, kritik yol etkisi ve kanıtlama standartları."
+    },
+    {
+      "index": 50,
+      "file": "Why Claims Occur-The Red Flags.pdf",
+      "size_mb": 1.06,
+      "tr_title": "Hak Talepleri Neden Doğar? Erken Tehlike İşaretleri (Red Flags) (30s)",
+      "tr_desc": "Eksik proje, gerçekçi olmayan süre, zayıf saha kaydı ve geciken onayların yarattığı uyarı sinyalleri."
+    },
+    {
+      "index": 51,
+      "file": "_golden_principles_1_12.pdf",
+      "size_mb": 0.28,
+      "tr_title": "FIDIC Altın İlkeleri (Golden Principles — 2019 1. Baskı) (14s)",
+      "tr_desc": "Bir sözleşmenin gerçek anlamda 'FIDIC Sözleşmesi' sayılması için bozulmaması gereken 5 Altın İlke."
+    },
+    {
+      "index": 52,
+      "file": "concurrent delay.pdf",
+      "size_mb": 1.88,
+      "tr_title": "Eşzamanlı Gecikme (Concurrent Delay) Analiz Rehberi (46s)",
+      "tr_desc": "İşveren ve Yüklenici gecikmelerinin çakışması halinde EOT ve maliyet ayrıştırma yöntemleri."
+    },
+    {
+      "index": 53,
+      "file": "contract checklist.pdf",
+      "size_mb": 0.57,
+      "tr_title": "Kapsamlı Sözleşme Kontrol Listesi (18s)",
+      "tr_desc": "Yatırımcı ve yüklenici için ihale ve sözleşme şartlarını madde madde denetleme listesi."
+    },
+    {
+      "index": 54,
+      "file": "doku.pub_fidic-construction-contract-2nd-ed-2017-red-book.pdf",
+      "size_mb": 1.87,
+      "tr_title": "FIDIC Kırmızı Kitap 2017 (2. Baskı) Tam Metin — Yedek Kopya (225s)",
+      "tr_desc": "İşveren tasarımlı yapım işleri sözleşme genel şartları, özel şart kılavuzu ve ek formlar."
+    },
+    {
+      "index": 55,
+      "file": "doku_pub_fidic_silver_book_conditions_of_contract_for_epc_turnkey.pdf",
+      "size_mb": 9.2,
+      "tr_title": "FIDIC Gümüş Kitap (EPC / Anahtar Teslim) Sözleşme Şartları (220s)",
+      "tr_desc": "Anahtar teslim mühendislik-tedarik-yapım projeleri için tam sözleşme kitabı."
+    },
+    {
+      "index": 56,
+      "file": "doku_pub_fidicyellow2017_fidic_yellow_book_conditions_of_contract.pdf",
+      "size_mb": 1.89,
+      "tr_title": "FIDIC Sarı Kitap 2017 (2. Baskı) Tam Metin — Yedek Kopya (231s)",
+      "tr_desc": "Tesis ve Tasarla-Yap (Plant & Design-Build) işleri genel ve özel şartları."
+    },
+    {
+      "index": 57,
+      "file": "dokumen_tips_fidic_client_consultant_model_agreement_2006_full_white.pdf",
+      "size_mb": 0.29,
+      "tr_title": "FIDIC Beyaz Kitap 2006 (4. Baskı) Müşavirlik Sözleşmesi (38s)",
+      "tr_desc": "İşveren – Müşavir/Mimar model hizmet anlaşması 2006 sürümü."
+    },
+    {
+      "index": 58,
+      "file": "dokumen_tips_fidic_client_consultant_model_services_agreement_silver.pdf",
+      "size_mb": 0.67,
+      "tr_title": "FIDIC Müşavirlik ve Hizmet Sözleşmesi Uygulama Notları (29s)",
+      "tr_desc": "Danışmanlık kapsamı, sorumluluk sınırları ve ödeme ekleri incelemesi."
+    },
+    {
+      "index": 59,
+      "file": "fidic-db-yellow-book.pdf",
+      "size_mb": 0.91,
+      "tr_title": "FIDIC Sarı Kitap 1999 (1. Baskı) Tasarla-Yap Şartnamesi (130s)",
+      "tr_desc": "1999 baskısı Plant & Design-Build sözleşme genel şartları."
+    },
+    {
+      "index": 60,
+      "file": "papworth_claims.pdf",
+      "size_mb": 0.13,
+      "tr_title": "Yeni FIDIC Şartnamelerinde Hak Talepleri — Papworth İncelemesi (9s)",
+      "tr_desc": "Madde 20 prosedür adımları ve karşı taleplerin değerlendirilmesi."
+    },
+    {
+      "index": 61,
+      "file": "pdf_93_the_fidic_contracts_obligations_of_the_parties_by_andy_hewitt.pdf",
+      "size_mb": 0.05,
+      "tr_title": "FIDIC Sözleşmelerinde Tarafların Yükümlülükleri — Andy Hewitt Özeti (10s)",
+      "tr_desc": "İşveren, Mühendis ve Yüklenicinin tüm maddelerdeki bildirim ve eylem ödevleri tablosu."
+    },
+    {
+      "index": 62,
+      "file": "pdfcoffee.com_fidic-blue-bookpdf-pdf-free.pdf",
+      "size_mb": 0.25,
+      "tr_title": "FIDIC Mavi-Yeşil Kitap (Deniz Tarama ve Kıyı Islahı Sözleşmesi) (60s)",
+      "tr_desc": "Liman, tarama (dredging) ve dolgu işleri için özel sözleşme şartları."
+    },
+    {
+      "index": 63,
+      "file": "pdfcoffee.com_fidic-emerald-underground-2pdf-pdf-free.pdf",
+      "size_mb": 12.11,
+      "tr_title": "FIDIC Zümrüt Kitap (Emerald Book — Yeraltı ve Tünel İşleri) (148s)",
+      "tr_desc": "Jeoteknik Baz Raporu (GBR) ve değişken kazı/tahkimat süresine dayalı tünel sözleşmesi."
+    },
+    {
+      "index": 64,
+      "file": "pdfcoffee.com_fidic-green-bookpdf-pdf-free.pdf",
+      "size_mb": 1.89,
+      "tr_title": "FIDIC Yeşil Kitap (Green Book — Kısa Sözleşme Formu) (41s)",
+      "tr_desc": "Küçük/orta ölçekli bina, villa ve tadilat işleri için 15 maddelik pratik sözleşme kabuğu."
+    },
+    {
+      "index": 65,
+      "file": "pdfcoffee_com_fidic_subcontract_general_conditions_2011_pdf_free.pdf",
+      "size_mb": 7.2,
+      "tr_title": "FIDIC Alt Yüklenici (Taşeron) Genel Şartları — 2011 (46s)",
+      "tr_desc": "Ana Yüklenici ile alt yükleniciler arasında uyumlu (back-to-back) sözleşme şartları."
+    },
+    {
+      "index": 66,
+      "file": "pdfcoffee_com_new_fidic_white_book_consultancy_servicespdf_pdf_free.pdf",
+      "size_mb": 0.03,
+      "tr_title": "Yeni Beyaz Kitap Müşavirlik Hizmetleri Hukuk Bülteni (3s)",
+      "tr_desc": "Müşavirlik sözleşmesinde fesih, ödeme ve sorumluluk yenilikleri."
+    },
+    {
+      "index": 67,
+      "file": "photo_2024-05-08_11-30-01.jpg",
+      "size_mb": 0.08,
+      "tr_title": "Görsel Kart 01 — İşverenin Hak Talepleri (Claims by the Employer)",
+      "tr_desc": "Madde 2.5 (1999) / 20.2 (2017) kapsamında bildirim gerektiren ve gerektirmeyen İşveren kesinti/talep maddeleri."
+    },
+    {
+      "index": 68,
+      "file": "photo_2024-05-08_11-30-04.jpg",
+      "size_mb": 0.1,
+      "tr_title": "Görsel Kart 02 — Yüklenicinin Hak Talepleri Özeti (Kırmızı Kitap 1999)",
+      "tr_desc": "Değerlendirme, kâr+maliyet (T+M) ve süre uzatımı (EOT) hakkı doğuran maddeler listesi."
+    },
+    {
+      "index": 69,
+      "file": "photo_2024-05-08_11-30-08.jpg",
+      "size_mb": 0.1,
+      "tr_title": "Görsel Kart 03 — Hak Talebi Doğuran Tipik Saha Sebepleri (Cause)",
+      "tr_desc": "Geç yer teslimi, revize çizim, şartname yorumu, olumsuz hava, geciken ödeme ve engellemeler."
+    },
+    {
+      "index": 70,
+      "file": "photo_2024-05-08_11-30-12.jpg",
+      "size_mb": 0.09,
+      "tr_title": "Görsel Kart 04 — Yüklenici Hak Talepleri T / C / M Matrisi",
+      "tr_desc": "Madde 1.9'dan 19.6'ya kadar tüm alt maddelerin Süre (T), Maliyet (C) ve Maliyet+Kâr (M) karşılıkları."
+    },
+    {
+      "index": 71,
+      "file": "photo_2024-05-08_11-30-14.jpg",
+      "size_mb": 0.17,
+      "tr_title": "Görsel Kart 05 — İş Programını Sözleşme Eki Yapmanın Tehlikesi",
+      "tr_desc": "İş Programı veya İş Yöntem Beyanı sözleşme dokümanı yapılırsa her gün değişikliğinin sözleşme ihlali sayılma riski!"
+    },
+    {
+      "index": 72,
+      "file": "photo_2024-05-08_11-30-17.jpg",
+      "size_mb": 0.24,
+      "tr_title": "Görsel Kart 06 — High Court İçtihadı (Yöntem Beyanı & Tünel Davası)",
+      "tr_desc": "İhale eki yapılan imalat yönteminin imkansız çıkması üzerine mahkemenin Yüklenici lehine Varyasyon kararı."
+    },
+    {
+      "index": 73,
+      "file": "photo_2024-05-08_11-30-20.jpg",
+      "size_mb": 0.09,
+      "tr_title": "Görsel Kart 07 — As-Built (Yapıldı) Çizimleri Tanımı",
+      "tr_desc": "İnşaat sırasında ve bitiminde sahadaki gerçek ölçü ve konumları işleyen nihai revize projeler."
+    },
+    {
+      "index": 74,
+      "file": "photo_2024-05-08_11-30-22.jpg",
+      "size_mb": 0.1,
+      "tr_title": "Görsel Kart 08 — Hudson Formülü (Merkez Ofis Genel Gider Hesabı)",
+      "tr_desc": "(Merkez Genel Gider + Kâr)% / 100 × Sözleşme Bedeli / Süre (Hafta) × Gecikme (Hafta)."
+    },
+    {
+      "index": 75,
+      "file": "photo_2024-05-08_11-30-24.jpg",
+      "size_mb": 0.09,
+      "tr_title": "Görsel Kart 09 — Maktu Gecikme Cezası (Liquidated Damages Clause)",
+      "tr_desc": "Yükümlülük geciktiğinde önceden kararlaştırılmış günlük sabit tazminat hükmü."
+    },
+    {
+      "index": 76,
+      "file": "photo_2024-05-08_11-30-26.jpg",
+      "size_mb": 0.09,
+      "tr_title": "Görsel Kart 10 — Verimlilik Kaybı (Disruption — SCL Protokolü)",
+      "tr_desc": "Gecikmeden farklı olarak normal çalışma düzeninin bozulması sonucu oluşan üretkenlik ve verim düşüşü."
+    },
+    {
+      "index": 77,
+      "file": "toaz_info_fidic_construction_contract_2nd_ed_2017_red_book_pr_e.pdf",
+      "size_mb": 1.87,
+      "tr_title": "FIDIC Kırmızı Kitap 2017 Tam Metin — 3. Yedek Kopya (225s)",
+      "tr_desc": "2017 Yapım İşleri Sözleşmesi genel şartlar ve formlar."
+    },
+    {
+      "index": 78,
+      "file": "toaz_info_fidic_white_book_pr_7a8b012d9ebe99b558cbc21cb94d1d12_1.pdf",
+      "size_mb": 0.14,
+      "tr_title": "FIDIC Beyaz Kitap Model Hizmet Anlaşması Metni (28s)",
+      "tr_desc": "İşveren-Müşavir sözleşmesi maddeleri ve ekleri."
+    }
+  ]
+}
