@@ -1044,8 +1044,18 @@ function renderFidic(prj) {
               </div>
             `).join('')}
           </div>
-          <div style="margin-top:12px;padding:11px 13px;border-radius:9px;background:var(--surface-alt);border:1px solid var(--border);font-size:12px;color:var(--ink-secondary)">
-            <strong>Yerel Klasör Hazır:</strong> 10 yüksek çözünürlüklü PNG kart ve paylaşım metni doğrudan <code>D:\\26FIDIC\\Instagram_FIDIC_Carousel_Kartlari\\</code> klasörünüze kaydedildi.
+          <div style="margin-top:12px;padding:13px 15px;border-radius:11px;background:var(--surface-alt);border:1px solid var(--border)">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:6px">
+              <strong>Seslendirmeli Animasyonlu FIDIC Felsefesi Videosu (Remotion + Türkçe Ses)</strong>
+              <div style="display:flex;gap:6px">
+                <a class="btn sm primary" href="/videos/FIDIC_Felsefesi_9x16_Reels_Sesli.mp4" download>9:16 Reels İndir (.mp4)</a>
+                <a class="btn sm" href="/videos/FIDIC_Felsefesi_16x9_Sunum_Sesli.mp4" download>16:9 Sunum İndir (.mp4)</a>
+              </div>
+            </div>
+            <video src="/videos/FIDIC_Felsefesi_16x9_Sunum_Sesli.mp4" controls preload="metadata" style="width:100%;border-radius:8px;border:1px solid var(--border);background:#0F172A"></video>
+            <div style="margin-top:8px;font-size:11.5px;color:var(--ink-secondary)">
+              <strong>Klasör:</strong> <code>D:\\26FIDIC\\Instagram_FIDIC_Carousel_Kartlari\\</code> · <strong>Açık Kaynak Video Motoru:</strong> <code>github.com/thezencirs/CircleFIDIC/tree/main/video-studio</code>
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,83 @@
+{
+  "fps": 30,
+  "totalFrames": 2695,
+  "scenes": [
+    {
+      "id": "s01",
+      "num": "01 / 07",
+      "kicker": "MİMARİ & MÜHENDİSLİK FELSEFESİ · 1913",
+      "title": "FIDIC bir evrak değil, şantiyenin adalet omurgasıdır.",
+      "subtitle": "Şantiyelerde en büyük kayıp belirsizlikten doğar; FIDIC görev ve yetkiyi tek çizgide toplar.",
+      "tts": "Şantiyelerde en büyük para; demire ya da betona değil, belirsizliğe ve sözlü talimatlara gider. İşte fidik, yüz yılı aşkın süredir bu kaosu bitiren mühendislik felsefesidir.",
+      "audioFile": "audio/s01.wav",
+      "audioSec": 12.65,
+      "durationInFrames": 393
+    },
+    {
+      "id": "s02",
+      "num": "02 / 07",
+      "kicker": "TEMEL İLKE · RİSK TERAZİSİ",
+      "title": "Riski gizleme. Onu en iyi yönetebilecek tarafa ver.",
+      "subtitle": "Yatırımcı arsayı ve finansı, yüklenici üretimi üstlenir; mühendis merkezde tarafsız kalır.",
+      "tts": "Temel kural basittir: Riski gizleme, onu en iyi yönetebilecek tarafa ver. Yatırımcı arsayı ve finansı üstlenir; yüklenici üretimi yönetir; mühendis ise merkezde tarafsız dengeyi korur.",
+      "audioFile": "audio/s02.wav",
+      "audioSec": 13.18,
+      "durationInFrames": 409
+    },
+    {
+      "id": "s03",
+      "num": "03 / 07",
+      "kicker": "GÖKKUŞAĞI SİSTEMİ · 5 KİTAP 5 ÖLÇEK",
+      "title": "Projeyi kim çiziyorsa, sözleşmenin rengi ona göre seçilir.",
+      "subtitle": "Villada Yeşil, işveren çiziminde Kırmızı, tünelde Zümrüt, tasarla-yapta Sarı, anahtar teslimde Gümüş.",
+      "tts": "Tek kalıp sözleşme yoktur. Küçük villada on beş maddelik Yeşil Kitap, işveren çiziminde Kırmızı, tünelde Zümrüt, tasarla yapta Sarı, anahtar teslimde Gümüş Kitap seçilir.",
+      "audioFile": "audio/s03.wav",
+      "audioSec": 12.62,
+      "durationInFrames": 392
+    },
+    {
+      "id": "s04",
+      "num": "04 / 07",
+      "kicker": "SAHA DİSİPLİNİ · MADDE 7.3 MUAYENE",
+      "title": "Görülmeden kapatılan imalat, yarının gizli kusurudur.",
+      "subtitle": "Donatı ve su yalıtımı kontrol tutanağına bağlanmadan tek kürek beton dökülemez.",
+      "tts": "Sahada altın kural: Görülmeden kapatılan her imalat, yarının gizli kusurudur. Su yalıtımı ve demir donatı muayene edilip tutanağa bağlanmadan tek kürek beton dökülemez.",
+      "audioFile": "audio/s04.wav",
+      "audioSec": 12.12,
+      "durationInFrames": 377
+    },
+    {
+      "id": "s05",
+      "num": "05 / 07",
+      "kicker": "ZAMAN KALKANI · MADDE 20.2 TIME-BAR",
+      "title": "Şantiyede kayıt yoksa hak yoktur. 28 gün geçerse ses duyulmaz.",
+      "subtitle": "Gecikme veya zemin sürprizinde 28 takvim günü içinde resmi bildirim zorunludur.",
+      "tts": "Şantiyede kayıt yoksa hak da yoktur. Bir gecikme ya da zemin sürprizi yaşandığında, yirmi sekiz gün içinde resmi bildirim yapılmazsa tüm hak düşer.",
+      "audioFile": "audio/s05.wav",
+      "audioSec": 10.63,
+      "durationInFrames": 332
+    },
+    {
+      "id": "s06",
+      "num": "06 / 07",
+      "kicker": "NAKİT RİTMİ & TESLİM · MADDE 10 – 14",
+      "title": "Hakediş 28 günde onaylanır, 56 günde ödenir.",
+      "subtitle": "Kesintiler ustanın verimini eritir; geçici kabul ise bina riskini yatırımcıya devreder.",
+      "tts": "Nakit şantiyenin kan dolaşımıdır: Hakediş yirmi sekiz günde onaylanır, elli altı günde ödenir. Geçici kabulle birlikte bina riski yatırımcıya devredilir.",
+      "audioFile": "audio/s06.wav",
+      "audioSec": 11.04,
+      "durationInFrames": 345
+    },
+    {
+      "id": "s07",
+      "num": "07 / 07",
+      "kicker": "AÇIK KAYNAK SİSTEM · CIRCLE FIDIC",
+      "title": "Bu felsefeyi şantiyeye indirdik: Circle FIDIC.",
+      "subtitle": "Yatırımcı, yürütücü, mimar, şef ve usta tek yalın omurgada — GitHub'da ücretsiz açık kaynak.",
+      "tts": "Bu felsefeyi yatırımcı, yürütücü, mimar, şantiye şefi ve sahadaki ustanın karmaşasız kullanacağı açık kaynak bir sisteme dönüştürdük. Sörkıl fidik, GitHub üzerinde ücretsiz yayında.",
+      "audioFile": "audio/s07.wav",
+      "audioSec": 13.3,
+      "durationInFrames": 447
+    }
+  ]
+}

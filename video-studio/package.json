@@ -1,0 +1,22 @@
+{
+  "name": "circle-fidic-video-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Open-source Remotion + Neural Turkish Voiceover Motion-Graphics Studio for Circle FIDIC (by thezencirs)",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render:reels": "remotion render src/index.ts FidicReels9x16 out/FIDIC_Felsefesi_9x16_Reels_Sesli.mp4",
+    "render:wide": "remotion render src/index.ts FidicDeck16x9 out/FIDIC_Felsefesi_16x9_Sunum_Sesli.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.242",
+    "@remotion/renderer": "4.0.242",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.242"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "typescript": "5.6.3"
+  }
+}
