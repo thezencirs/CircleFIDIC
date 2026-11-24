@@ -29,7 +29,7 @@ DEFAULT_SCENES = [
         "kicker": "MİMARİ & MÜHENDİSLİK FELSEFESİ · 1913",
         "title": "FIDIC bir evrak değil, şantiyenin adalet omurgasıdır.",
         "subtitle": "Şantiyelerde en büyük kayıp belirsizlikten doğar; FIDIC görev ve yetkiyi tek çizgide toplar.",
-        "tts": "Şantiyelerde en büyük para; demire ya da betona değil, belirsizliğe ve sözlü talimatlara gider. İşte fidik, yüz yılı aşkın süredir bu kaosu bitiren mühendislik felsefesidir."
+        "tts": "Şantiyelerde en büyük para; demire ya da betona değil, belirsizliğe ve sözlü talimatlara gider. Fidik sistemi, yüz yılı aşkın süredir bu kaosu bitiren mühendislik felsefesidir."
     },
     {
         "id": "s02",
@@ -45,7 +45,7 @@ DEFAULT_SCENES = [
         "kicker": "GÖKKUŞAĞI SİSTEMİ · 5 KİTAP 5 ÖLÇEK",
         "title": "Projeyi kim çiziyorsa, sözleşmenin rengi ona göre seçilir.",
         "subtitle": "Villada Yeşil, işveren çiziminde Kırmızı, tünelde Zümrüt, tasarla-yapta Sarı, anahtar teslimde Gümüş.",
-        "tts": "Tek kalıp sözleşme yoktur. Küçük villada on beş maddelik Yeşil Kitap, işveren çiziminde Kırmızı, tünelde Zümrüt, tasarla yapta Sarı, anahtar teslimde Gümüş Kitap seçilir."
+        "tts": "Tek kalıp sözleşme yoktur: Küçük villada on beş maddelik Yeşil Kitap, işveren çiziminde Kırmızı Kitap, tünelde Zümrüt, tasarla yapta Sarı, anahtar teslimde Gümüş Kitap seçilir."
     },
     {
         "id": "s04",
@@ -77,7 +77,7 @@ DEFAULT_SCENES = [
         "kicker": "AÇIK KAYNAK SİSTEM · CIRCLE FIDIC",
         "title": "Bu felsefeyi şantiyeye indirdik: Circle FIDIC.",
         "subtitle": "Yatırımcı, yürütücü, mimar, şef ve usta tek yalın omurgada — GitHub'da ücretsiz açık kaynak.",
-        "tts": "Bu felsefeyi yatırımcı, yürütücü, mimar, şantiye şefi ve sahadaki ustanın karmaşasız kullanacağı açık kaynak bir sisteme dönüştürdük. Sörkıl fidik, GitHub üzerinde ücretsiz yayında."
+        "tts": "Bu felsefeyi yatırımcı, yürütücü, mimar, şantiye şefi ve sahadaki ustanın karmaşasız kullanacağı açık kaynak bir sisteme dönüştürdük; Sörkıl Fidik, Githab üzerinde ücretsiz yayında."
     }
 ]
 
@@ -98,10 +98,20 @@ def get_duration_sec(filepath):
 
 
 def normalize_broadcast_wav(raw_in, norm_out):
+    # Clean low/high noise, tighten long mid-pauses, trim trailing breath artifacts, and master to -16 LUFS
+    af_chain = (
+        "highpass=f=80,lowpass=f=11500,"
+        "silenceremove=start_periods=1:start_duration=0.03:start_threshold=-38dB:"
+        "stop_periods=-1:stop_duration=0.40:stop_threshold=-38dB,"
+        "areverse,silenceremove=start_periods=1:start_duration=0.05:start_threshold=-32dB,"
+        "afade=t=in:st=0:d=0.06,areverse,"
+        "acompressor=threshold=-18dB:ratio=3:attack=5:release=90,"
+        "loudnorm=I=-16:TP=-1.5:LRA=11"
+    )
     subprocess.run(
         [
             FFMPEG, "-y", "-i", raw_in,
-            "-af", "highpass=f=80,acompressor=threshold=-18dB:ratio=3:attack=5:release=90,loudnorm=I=-16:TP=-1.5:LRA=11",
+            "-af", af_chain,
             "-ar", "48000", "-ac", "2", norm_out,
         ],
         check=True,
